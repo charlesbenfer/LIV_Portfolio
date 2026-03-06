@@ -22,6 +22,7 @@ from data_loader import (
     LIV_ROSTER,
     PLAYER_TEAM,
     YEARS,
+    HISTORICAL_ROSTER,
 )
 
 # ── Page config ────────────────────────────────────────────────────────────────
@@ -894,8 +895,12 @@ elif page == "Team Analysis":
     st.title("LIV Team Skill Analysis")
     st.markdown("Team-level skill composition and balance metrics for all LIV Golf teams.")
 
-    # ── Base data: 2025 model predictions ──────────────────────────────────────
-    val_2025_team = liv_val_df[liv_val_df['season'] == 2025].copy()
+    # ── Base data: 2025 model predictions, restricted to confirmed 2025 roster ──
+    _roster_2025 = {p for players in HISTORICAL_ROSTER[2025].values() for p in players}
+    val_2025_team = liv_val_df[
+        (liv_val_df['season'] == 2025) &
+        (liv_val_df['playerName'].isin(_roster_2025))
+    ].copy()
     SG_COLS  = ['est_sg_total', 'est_sg_ott', 'est_sg_app', 'est_sg_atg', 'est_sg_putt']
     SG_LABELS = ['SG Total', 'SG Off Tee', 'SG Approach', 'SG Around Green', 'SG Putting']
 
