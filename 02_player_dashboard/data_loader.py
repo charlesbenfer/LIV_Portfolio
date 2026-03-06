@@ -119,6 +119,11 @@ def load_liv_valuation() -> pd.DataFrame:
     df = df[df['season'].astype(str) != '2026'].copy()
     df = (df.sort_values('season')
             .drop_duplicates(subset=['playerName', 'season'], keep='first'))
+
+    # Fill missing team assignments from the current roster mapping.
+    missing = df['team'].isna() | (df['team'].astype(str).str.strip() == '')
+    df.loc[missing, 'team'] = df.loc[missing, 'playerName'].map(PLAYER_TEAM)
+
     return df
 
 
