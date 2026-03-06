@@ -1213,6 +1213,36 @@ elif page == "ROI & Acquisition":
         val_roi['volume_pct'].fillna(50) * 0.2
     )
 
+    # ── Prestige score: pre-LIV peak SG + major championship pedigree ──────────
+    # peak_sg_total from profile_df represents their career ceiling on PGA Tour —
+    # what LIV was actually investing in when they signed.
+    _peak_sg = profile_df[['playerName', 'peak_sg_total']].copy()
+    val_roi = val_roi.merge(_peak_sg, on='playerName', how='left')
+
+    _MAJORS = {
+        'The Open', 'The Open Championship',
+        'PGA Championship', 'U.S. Open', 'Masters Tournament',
+    }
+    if not hist_df.empty and 'tournamentName' in hist_df.columns:
+        _maj = hist_df[hist_df['tournamentName'].isin(_MAJORS)].copy()
+        _maj['pos_num'] = pd.to_numeric(_maj['position'], errors='coerce')
+        _major_top10 = (
+            _maj[_maj['pos_num'] <= 10]
+            .groupby('playerName').size()
+            .reset_index(name='major_top10')
+        )
+        val_roi = val_roi.merge(_major_top10, on='playerName', how='left')
+    else:
+        val_roi['major_top10'] = 0
+    val_roi['major_top10'] = val_roi['major_top10'].fillna(0).astype(int)
+
+    val_roi['peak_sg_pct']    = val_roi['peak_sg_total'].rank(pct=True, na_option='keep') * 100
+    val_roi['major_pct']      = val_roi['major_top10'].rank(pct=True, na_option='keep') * 100
+    val_roi['prestige_score'] = (
+        val_roi['peak_sg_pct'].fillna(50) * 0.6 +
+        val_roi['major_pct'].fillna(50) * 0.4
+    )
+
     st.markdown("---")
 
     # ══ SECTION 1: PLAYER VALUE SCORE TABLE ════════════════════════════════════
@@ -1364,7 +1394,122 @@ elif page == "ROI & Acquisition":
 
     st.markdown("---")
 
-    # ══ SECTION 3: FIELD QUALITY BENCHMARKING ══════════════════════════════════
+    # ══ SECTION 3: INVESTMENT CLASSIFICATION 2×2 ════════════════════════════════
+    st.subheader("Investment Classification — Prestige vs. On-Course Delivery")
+    st.caption(
+        "X-axis: prestige score combining career peak SG (60%) and major championship top-10 "
+        "count (40%) — a proxy for what LIV was investing in at signing. "
+        "Y-axis: LIV value score (skill + results + volume on tour). "
+        "Bubble size = events played."
+    )
+
+    _clf_df = val_roi[val_roi['prestige_score'].notna() & val_roi['value_score'].notna()].copy()
+
+    _all_teams = sorted(_clf_df['team'].dropna().unique())
+    _palette = px.colors.qualitative.Bold + px.colors.qualitative.Pastel
+    _team_color = {t: _palette[i % len(_palette)] for i, t in enumerate(_all_teams)}
+
+    fig_2x2 = go.Figure()
+    for _team in _all_teams:
+        _grp = _clf_df[_clf_df['team'] == _team]
+        if _grp.empty:
+            continue
+        fig_2x2.add_trace(go.Scatter(
+            x=_grp['prestige_score'],
+            y=_grp['value_score'],
+            mode='markers+text',
+            name=_team,
+            text=_grp['playerName'].apply(lambda n: n.split()[-1]),
+            textposition='top center',
+            textfont=dict(size=10, color='rgba(255,255,255,0.75)'),
+            marker=dict(
+                color=_team_color[_team],
+                size=_grp['events_played'].fillna(8).clip(4, 20).astype(float) * 1.3,
+                line=dict(width=1, color='rgba(255,255,255,0.3)'),
+                opacity=0.9,
+            ),
+            customdata=_grp[['playerName', 'team', 'peak_sg_total', 'major_top10',
+                              'events_played', 'avg_position', 'wins']].values,
+            hovertemplate=(
+                '<b>%{customdata[0]}</b> — %{customdata[1]}<br>'
+                'Peak SG: %{customdata[2]:.3f}  |  Major Top-10s: %{customdata[3]:.0f}<br>'
+                'Prestige Score: %{x:.1f}  |  Value Score: %{y:.1f}<br>'
+                'Events: %{customdata[4]:.0f}  |  Avg Finish: %{customdata[5]:.1f}  |  Wins: %{customdata[6]:.0f}'
+                '<extra></extra>'
+            ),
+        ))
+
+    fig_2x2.add_vline(x=50, line_dash='dot', line_color='rgba(255,255,255,0.25)', line_width=1)
+    fig_2x2.add_hline(y=50, line_dash='dot', line_color='rgba(255,255,255,0.25)', line_width=1)
+
+    for _ax, _ay, _title, _sub in [
+        (75, 75, 'Core Assets',   'Investment validated'),
+        (25, 75, 'Value Finds',   'Outperforming profile'),
+        (75, 25, 'Contract Risk', 'High expectation, lower delivery'),
+        (25, 25, 'Field Depth',   'Roster depth'),
+    ]:
+        fig_2x2.add_annotation(
+            x=_ax, y=_ay,
+            text=f'<b>{_title}</b><br><span style="font-size:10px">{_sub}</span>',
+            showarrow=False,
+            font=dict(color='rgba(255,255,255,0.22)', size=12),
+            xanchor='center', yanchor='middle',
+        )
+
+    fig_2x2.update_layout(
+        plot_bgcolor=_DARK, paper_bgcolor=_DARK,
+        font_color='white', height=540,
+        xaxis=dict(title='Prestige Score (Peak SG + Major Pedigree)', range=[0, 105]),
+        yaxis=dict(title='LIV Value Score (Skill + Results + Volume)', range=[0, 105]),
+        legend=dict(
+            orientation='v', x=1.01, y=0.5,
+            bgcolor='rgba(0,0,0,0)', borderwidth=0,
+            font=dict(size=11),
+        ),
+        hovermode='closest',
+    )
+    st.plotly_chart(fig_2x2, use_container_width=True)
+
+    # ── Quadrant summary ───────────────────────────────────────────────────────
+    _clf_df['quadrant'] = _clf_df.apply(lambda r: (
+        'Core Assets'   if r['prestige_score'] >= 50 and r['value_score'] >= 50 else
+        'Value Finds'   if r['prestige_score'] <  50 and r['value_score'] >= 50 else
+        'Contract Risk' if r['prestige_score'] >= 50 and r['value_score'] <  50 else
+        'Field Depth'
+    ), axis=1)
+
+    _q_colors = {
+        'Core Assets':   '#2ecc71',
+        'Value Finds':   '#3498db',
+        'Contract Risk': '#e74c3c',
+        'Field Depth':   '#95a5a6',
+    }
+    col_qa, col_qb = st.columns(2)
+    for quad, col_q in [
+        ('Core Assets',   col_qa),
+        ('Value Finds',   col_qb),
+        ('Contract Risk', col_qa),
+        ('Field Depth',   col_qb),
+    ]:
+        names = sorted(
+            _clf_df.loc[_clf_df['quadrant'] == quad, 'playerName']
+            .apply(lambda n: n.split()[-1])
+        )
+        color = _q_colors[quad]
+        with col_q:
+            st.markdown(
+                f"<div style='border-left:3px solid {color};padding:8px 12px;"
+                f"margin-bottom:8px;background:rgba(0,0,0,0.2);border-radius:4px'>"
+                f"<span style='color:{color};font-weight:700;font-size:14px'>{quad}</span>"
+                f"<span style='color:#aaa;font-size:12px;margin-left:8px'>({len(names)})</span><br>"
+                f"<span style='color:#ccc;font-size:12px'>{', '.join(names)}</span>"
+                f"</div>",
+                unsafe_allow_html=True,
+            )
+
+    st.markdown("---")
+
+    # ══ SECTION 4: FIELD QUALITY BENCHMARKING ══════════════════════════════════
     st.subheader("Comparable PGA Tour Talent Pool")
     st.caption(
         "Recent PGA Tour players (2022–present, not on LIV) with an SG profile "
