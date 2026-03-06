@@ -1,0 +1,563 @@
+event_slug,event_name,year,team,team_score,players_used,event_rank,win,podium,total_teams
+adelaide-2023,Adelaide 2023,2023,4Aces GC,-57.0,4,1,1,1,12
+adelaide-2023,Adelaide 2023,2023,Cleeks Golf Club,-14.0,4,11,0,0,12
+adelaide-2023,Adelaide 2023,2023,Crushers GC,-40.0,4,5,0,0,12
+adelaide-2023,Adelaide 2023,2023,Fireballs GC,-30.0,4,8,0,0,12
+adelaide-2023,Adelaide 2023,2023,HyFlyers GC,-43.0,4,3,0,1,12
+adelaide-2023,Adelaide 2023,2023,Korean Golf Club,-11.0,4,12,0,0,12
+adelaide-2023,Adelaide 2023,2023,Majesticks Golf Club,-27.0,3,10,0,0,12
+adelaide-2023,Adelaide 2023,2023,RangeGoats GC,-50.0,4,2,0,1,12
+adelaide-2023,Adelaide 2023,2023,Ripper GC,-29.0,4,9,0,0,12
+adelaide-2023,Adelaide 2023,2023,Smash GC,-34.0,4,7,0,0,12
+adelaide-2023,Adelaide 2023,2023,Southern Guards GC,-43.0,4,3,0,1,12
+adelaide-2023,Adelaide 2023,2023,Torque GC,-35.0,4,6,0,0,12
+adelaide-2024,Adelaide 2024,2024,4Aces GC,-32.0,4,10,0,0,13
+adelaide-2024,Adelaide 2024,2024,Cleeks Golf Club,-40.0,4,7,0,0,13
+adelaide-2024,Adelaide 2024,2024,Crushers GC,-42.0,4,5,0,0,13
+adelaide-2024,Adelaide 2024,2024,Fireballs GC,-31.0,4,11,0,0,13
+adelaide-2024,Adelaide 2024,2024,HyFlyers GC,-53.0,4,2,0,1,13
+adelaide-2024,Adelaide 2024,2024,Korean Golf Club,-40.0,4,7,0,0,13
+adelaide-2024,Adelaide 2024,2024,Legion XIII,-41.0,4,6,0,0,13
+adelaide-2024,Adelaide 2024,2024,Majesticks Golf Club,-7.0,4,13,0,0,13
+adelaide-2024,Adelaide 2024,2024,RangeGoats GC,-39.0,4,9,0,0,13
+adelaide-2024,Adelaide 2024,2024,Ripper GC,-53.0,4,2,0,1,13
+adelaide-2024,Adelaide 2024,2024,Smash GC,-30.0,4,12,0,0,13
+adelaide-2024,Adelaide 2024,2024,Southern Guards GC,-55.0,4,1,1,1,13
+adelaide-2024,Adelaide 2024,2024,Torque GC,-49.0,4,4,0,0,13
+adelaide-2025,Adelaide 2025,2025,4Aces GC,-9.0,4,5,0,0,13
+adelaide-2025,Adelaide 2025,2025,Cleeks Golf Club,7.0,4,12,0,0,13
+adelaide-2025,Adelaide 2025,2025,Crushers GC,-12.0,4,4,0,0,13
+adelaide-2025,Adelaide 2025,2025,Fireballs GC,-21.0,4,1,1,1,13
+adelaide-2025,Adelaide 2025,2025,HyFlyers GC,-9.0,4,5,0,0,13
+adelaide-2025,Adelaide 2025,2025,Korean Golf Club,5.0,4,10,0,0,13
+adelaide-2025,Adelaide 2025,2025,Legion XIII,-15.0,4,2,0,1,13
+adelaide-2025,Adelaide 2025,2025,Majesticks Golf Club,-9.0,4,5,0,0,13
+adelaide-2025,Adelaide 2025,2025,RangeGoats GC,6.0,4,11,0,0,13
+adelaide-2025,Adelaide 2025,2025,Ripper GC,-1.0,4,9,0,0,13
+adelaide-2025,Adelaide 2025,2025,Smash GC,13.0,4,13,0,0,13
+adelaide-2025,Adelaide 2025,2025,Southern Guards GC,-6.0,4,8,0,0,13
+adelaide-2025,Adelaide 2025,2025,Torque GC,-13.0,4,3,0,1,13
+adelaide-2026,Adelaide 2026,2026,4Aces GC,-14.0,4,4,0,0,14
+adelaide-2026,Adelaide 2026,2026,Cleeks Golf Club,-7.0,4,10,0,0,14
+adelaide-2026,Adelaide 2026,2026,Crushers GC,0.0,4,14,0,0,14
+adelaide-2026,Adelaide 2026,2026,Fireballs GC,-9.0,4,7,0,0,14
+adelaide-2026,Adelaide 2026,2026,HyFlyers GC,-11.0,4,6,0,0,14
+adelaide-2026,Adelaide 2026,2026,Korean Golf Club,-1.0,4,12,0,0,14
+adelaide-2026,Adelaide 2026,2026,Legion XIII,-8.0,4,9,0,0,14
+adelaide-2026,Adelaide 2026,2026,Majesticks Golf Club,-3.0,4,11,0,0,14
+adelaide-2026,Adelaide 2026,2026,RangeGoats GC,-13.0,4,5,0,0,14
+adelaide-2026,Adelaide 2026,2026,Ripper GC,-15.0,4,3,0,1,14
+adelaide-2026,Adelaide 2026,2026,Smash GC,-9.0,4,7,0,0,14
+adelaide-2026,Adelaide 2026,2026,Southern Guards GC,-19.0,4,1,1,1,14
+adelaide-2026,Adelaide 2026,2026,Torque GC,-17.0,4,2,0,1,14
+adelaide-2026,Adelaide 2026,2026,Wild Card,-1.0,5,12,0,0,14
+andalucia-2024,Andalucia 2024,2024,4Aces GC,22.0,4,8,0,0,13
+andalucia-2024,Andalucia 2024,2024,Cleeks Golf Club,20.0,4,7,0,0,13
+andalucia-2024,Andalucia 2024,2024,Crushers GC,1.0,4,1,1,1,13
+andalucia-2024,Andalucia 2024,2024,Fireballs GC,7.0,4,2,0,1,13
+andalucia-2024,Andalucia 2024,2024,HyFlyers GC,28.0,4,11,0,0,13
+andalucia-2024,Andalucia 2024,2024,Korean Golf Club,19.0,4,6,0,0,13
+andalucia-2024,Andalucia 2024,2024,Legion XIII,26.0,4,10,0,0,13
+andalucia-2024,Andalucia 2024,2024,Majesticks Golf Club,24.0,4,9,0,0,13
+andalucia-2024,Andalucia 2024,2024,RangeGoats GC,41.0,4,13,0,0,13
+andalucia-2024,Andalucia 2024,2024,Ripper GC,17.0,4,5,0,0,13
+andalucia-2024,Andalucia 2024,2024,Smash GC,35.0,4,12,0,0,13
+andalucia-2024,Andalucia 2024,2024,Southern Guards GC,11.0,4,3,0,1,13
+andalucia-2024,Andalucia 2024,2024,Torque GC,11.0,4,3,0,1,13
+andalucia-2025,Andalucia 2025,2025,4Aces GC,0.0,4,3,0,1,13
+andalucia-2025,Andalucia 2025,2025,Cleeks Golf Club,12.0,4,8,0,0,13
+andalucia-2025,Andalucia 2025,2025,Crushers GC,10.0,4,7,0,0,13
+andalucia-2025,Andalucia 2025,2025,Fireballs GC,-3.0,4,2,0,1,13
+andalucia-2025,Andalucia 2025,2025,HyFlyers GC,4.0,4,5,0,0,13
+andalucia-2025,Andalucia 2025,2025,Korean Golf Club,19.0,4,12,0,0,13
+andalucia-2025,Andalucia 2025,2025,Legion XIII,-5.0,4,1,1,1,13
+andalucia-2025,Andalucia 2025,2025,Majesticks Golf Club,14.0,4,10,0,0,13
+andalucia-2025,Andalucia 2025,2025,RangeGoats GC,28.0,4,13,0,0,13
+andalucia-2025,Andalucia 2025,2025,Ripper GC,8.0,4,6,0,0,13
+andalucia-2025,Andalucia 2025,2025,Smash GC,0.0,4,3,0,1,13
+andalucia-2025,Andalucia 2025,2025,Southern Guards GC,16.0,4,11,0,0,13
+andalucia-2025,Andalucia 2025,2025,Torque GC,13.0,4,9,0,0,13
+bangkok-2022,Bangkok 2022,2022,Cleeks Golf Club,-36.0,4,4,0,0,8
+bangkok-2022,Bangkok 2022,2022,Crushers GC,-42.0,4,2,0,1,8
+bangkok-2022,Bangkok 2022,2022,Fireballs GC,-47.0,4,1,1,1,8
+bangkok-2022,Bangkok 2022,2022,Korean Golf Club,-38.0,4,3,0,1,8
+bangkok-2022,Bangkok 2022,2022,Majesticks Golf Club,-32.0,4,6,0,0,8
+bangkok-2022,Bangkok 2022,2022,Smash GC,-34.0,4,5,0,0,8
+bangkok-2022,Bangkok 2022,2022,Southern Guards GC,-14.0,3,8,0,0,8
+bangkok-2022,Bangkok 2022,2022,Torque GC,-15.0,4,7,0,0,8
+bedminster-2023,Bedminster 2023,2023,4Aces GC,11.0,4,8,0,0,12
+bedminster-2023,Bedminster 2023,2023,Cleeks Golf Club,20.0,4,9,0,0,12
+bedminster-2023,Bedminster 2023,2023,Crushers GC,-1.0,4,2,0,1,12
+bedminster-2023,Bedminster 2023,2023,Fireballs GC,10.0,4,7,0,0,12
+bedminster-2023,Bedminster 2023,2023,HyFlyers GC,2.0,4,4,0,0,12
+bedminster-2023,Bedminster 2023,2023,Korean Golf Club,27.0,4,10,0,0,12
+bedminster-2023,Bedminster 2023,2023,Majesticks Golf Club,37.0,4,12,0,0,12
+bedminster-2023,Bedminster 2023,2023,RangeGoats GC,4.0,4,5,0,0,12
+bedminster-2023,Bedminster 2023,2023,Ripper GC,-7.0,4,1,1,1,12
+bedminster-2023,Bedminster 2023,2023,Smash GC,30.0,4,11,0,0,12
+bedminster-2023,Bedminster 2023,2023,Southern Guards GC,-1.0,4,2,0,1,12
+bedminster-2023,Bedminster 2023,2023,Torque GC,9.0,4,6,0,0,12
+boston-2022,Boston 2022,2022,Cleeks Golf Club,-16.0,4,6,0,0,8
+boston-2022,Boston 2022,2022,Crushers GC,-33.0,4,1,1,1,8
+boston-2022,Boston 2022,2022,Fireballs GC,-27.0,4,2,0,1,8
+boston-2022,Boston 2022,2022,Korean Golf Club,-5.0,4,8,0,0,8
+boston-2022,Boston 2022,2022,Majesticks Golf Club,-23.0,4,3,0,1,8
+boston-2022,Boston 2022,2022,Smash GC,-14.0,4,7,0,0,8
+boston-2022,Boston 2022,2022,Southern Guards GC,-19.0,4,4,0,0,8
+boston-2022,Boston 2022,2022,Torque GC,-19.0,4,4,0,0,8
+chicago-2022,Chicago 2022,2022,Cleeks Golf Club,-1.0,4,7,0,0,8
+chicago-2022,Chicago 2022,2022,Crushers GC,-13.0,4,2,0,1,8
+chicago-2022,Chicago 2022,2022,Fireballs GC,-11.0,4,3,0,1,8
+chicago-2022,Chicago 2022,2022,Korean Golf Club,11.0,4,8,0,0,8
+chicago-2022,Chicago 2022,2022,Majesticks Golf Club,-2.0,4,6,0,0,8
+chicago-2022,Chicago 2022,2022,Smash GC,-20.0,4,1,1,1,8
+chicago-2022,Chicago 2022,2022,Southern Guards GC,-11.0,4,3,0,1,8
+chicago-2022,Chicago 2022,2022,Torque GC,-5.0,4,5,0,0,8
+chicago-2023,Chicago 2023,2023,4Aces GC,-28.0,4,3,0,1,12
+chicago-2023,Chicago 2023,2023,Cleeks Golf Club,-10.0,4,9,0,0,12
+chicago-2023,Chicago 2023,2023,Crushers GC,-33.0,4,1,1,1,12
+chicago-2023,Chicago 2023,2023,Fireballs GC,-32.0,4,2,0,1,12
+chicago-2023,Chicago 2023,2023,HyFlyers GC,-2.0,4,10,0,0,12
+chicago-2023,Chicago 2023,2023,Korean Golf Club,5.0,4,12,0,0,12
+chicago-2023,Chicago 2023,2023,Majesticks Golf Club,-21.0,4,5,0,0,12
+chicago-2023,Chicago 2023,2023,RangeGoats GC,-26.0,4,4,0,0,12
+chicago-2023,Chicago 2023,2023,Ripper GC,-16.0,4,8,0,0,12
+chicago-2023,Chicago 2023,2023,Smash GC,-1.0,4,11,0,0,12
+chicago-2023,Chicago 2023,2023,Southern Guards GC,-21.0,4,5,0,0,12
+chicago-2023,Chicago 2023,2023,Torque GC,-21.0,4,5,0,0,12
+chicago-2024,Chicago 2024,2024,4Aces GC,5.0,4,10,0,0,13
+chicago-2024,Chicago 2024,2024,Cleeks Golf Club,-2.0,4,5,0,0,13
+chicago-2024,Chicago 2024,2024,Crushers GC,-9.0,4,2,0,1,13
+chicago-2024,Chicago 2024,2024,Fireballs GC,-10.0,4,1,1,1,13
+chicago-2024,Chicago 2024,2024,HyFlyers GC,6.0,4,11,0,0,13
+chicago-2024,Chicago 2024,2024,Korean Golf Club,-1.0,4,6,0,0,13
+chicago-2024,Chicago 2024,2024,Legion XIII,0.0,4,8,0,0,13
+chicago-2024,Chicago 2024,2024,Majesticks Golf Club,-4.0,4,4,0,0,13
+chicago-2024,Chicago 2024,2024,RangeGoats GC,3.0,4,9,0,0,13
+chicago-2024,Chicago 2024,2024,Ripper GC,7.0,4,12,0,0,13
+chicago-2024,Chicago 2024,2024,Smash GC,-1.0,4,6,0,0,13
+chicago-2024,Chicago 2024,2024,Southern Guards GC,11.0,4,13,0,0,13
+chicago-2024,Chicago 2024,2024,Torque GC,-5.0,4,3,0,1,13
+chicago-2025,Chicago 2025,2025,4Aces GC,-15.0,4,3,0,1,13
+chicago-2025,Chicago 2025,2025,Cleeks Golf Club,14.0,4,12,0,0,13
+chicago-2025,Chicago 2025,2025,Crushers GC,-7.0,4,5,0,0,13
+chicago-2025,Chicago 2025,2025,Fireballs GC,-15.0,4,3,0,1,13
+chicago-2025,Chicago 2025,2025,HyFlyers GC,6.0,4,10,0,0,13
+chicago-2025,Chicago 2025,2025,Korean Golf Club,17.0,4,13,0,0,13
+chicago-2025,Chicago 2025,2025,Legion XIII,-7.0,4,5,0,0,13
+chicago-2025,Chicago 2025,2025,Majesticks Golf Club,9.0,4,11,0,0,13
+chicago-2025,Chicago 2025,2025,RangeGoats GC,-2.0,4,7,0,0,13
+chicago-2025,Chicago 2025,2025,Ripper GC,1.0,4,8,0,0,13
+chicago-2025,Chicago 2025,2025,Smash GC,1.0,4,8,0,0,13
+chicago-2025,Chicago 2025,2025,Southern Guards GC,-17.0,4,1,1,1,13
+chicago-2025,Chicago 2025,2025,Torque GC,-17.0,4,1,1,1,13
+dallas-2025,Dallas 2025,2025,4Aces GC,-7.0,4,2,0,1,13
+dallas-2025,Dallas 2025,2025,Cleeks Golf Club,11.0,4,6,0,0,13
+dallas-2025,Dallas 2025,2025,Crushers GC,-18.0,4,1,1,1,13
+dallas-2025,Dallas 2025,2025,Fireballs GC,10.0,4,5,0,0,13
+dallas-2025,Dallas 2025,2025,HyFlyers GC,18.0,4,7,0,0,13
+dallas-2025,Dallas 2025,2025,Korean Golf Club,19.0,4,9,0,0,13
+dallas-2025,Dallas 2025,2025,Legion XIII,-6.0,4,3,0,1,13
+dallas-2025,Dallas 2025,2025,Majesticks Golf Club,22.0,4,11,0,0,13
+dallas-2025,Dallas 2025,2025,RangeGoats GC,34.0,4,13,0,0,13
+dallas-2025,Dallas 2025,2025,Ripper GC,18.0,4,7,0,0,13
+dallas-2025,Dallas 2025,2025,Smash GC,19.0,3,9,0,0,13
+dallas-2025,Dallas 2025,2025,Southern Guards GC,-3.0,4,4,0,0,13
+dallas-2025,Dallas 2025,2025,Torque GC,24.0,4,12,0,0,13
+dc-2023,Dc 2023,2023,4Aces GC,-8.0,4,6,0,0,12
+dc-2023,Dc 2023,2023,Cleeks Golf Club,-7.0,4,7,0,0,12
+dc-2023,Dc 2023,2023,Crushers GC,-14.0,4,3,0,1,12
+dc-2023,Dc 2023,2023,Fireballs GC,0.0,4,9,0,0,12
+dc-2023,Dc 2023,2023,HyFlyers GC,2.0,4,10,0,0,12
+dc-2023,Dc 2023,2023,Korean Golf Club,5.0,4,11,0,0,12
+dc-2023,Dc 2023,2023,Majesticks Golf Club,-12.0,4,5,0,0,12
+dc-2023,Dc 2023,2023,RangeGoats GC,-14.0,3,3,0,1,12
+dc-2023,Dc 2023,2023,Ripper GC,-2.0,4,8,0,0,12
+dc-2023,Dc 2023,2023,Smash GC,5.0,3,11,0,0,12
+dc-2023,Dc 2023,2023,Southern Guards GC,-23.0,4,1,1,1,12
+dc-2023,Dc 2023,2023,Torque GC,-23.0,4,1,1,1,12
+greenbrier-2023,Greenbrier 2023,2023,4Aces GC,-14.0,4,12,0,0,12
+greenbrier-2023,Greenbrier 2023,2023,Cleeks Golf Club,-36.0,4,6,0,0,12
+greenbrier-2023,Greenbrier 2023,2023,Crushers GC,-50.0,4,2,0,1,12
+greenbrier-2023,Greenbrier 2023,2023,Fireballs GC,-43.0,4,3,0,1,12
+greenbrier-2023,Greenbrier 2023,2023,HyFlyers GC,-43.0,4,3,0,1,12
+greenbrier-2023,Greenbrier 2023,2023,Korean Golf Club,-15.0,4,11,0,0,12
+greenbrier-2023,Greenbrier 2023,2023,Majesticks Golf Club,-35.0,4,7,0,0,12
+greenbrier-2023,Greenbrier 2023,2023,RangeGoats GC,-37.0,4,5,0,0,12
+greenbrier-2023,Greenbrier 2023,2023,Ripper GC,-17.0,4,10,0,0,12
+greenbrier-2023,Greenbrier 2023,2023,Smash GC,-30.0,4,9,0,0,12
+greenbrier-2023,Greenbrier 2023,2023,Southern Guards GC,-34.0,3,8,0,0,12
+greenbrier-2023,Greenbrier 2023,2023,Torque GC,-54.0,4,1,1,1,12
+greenbrier-2024,Greenbrier 2024,2024,4Aces GC,-25.0,4,11,0,0,13
+greenbrier-2024,Greenbrier 2024,2024,Cleeks Golf Club,-21.0,4,12,0,0,13
+greenbrier-2024,Greenbrier 2024,2024,Crushers GC,-28.0,4,9,0,0,13
+greenbrier-2024,Greenbrier 2024,2024,Fireballs GC,-46.0,4,3,0,1,13
+greenbrier-2024,Greenbrier 2024,2024,HyFlyers GC,-29.0,4,8,0,0,13
+greenbrier-2024,Greenbrier 2024,2024,Korean Golf Club,-32.0,4,7,0,0,13
+greenbrier-2024,Greenbrier 2024,2024,Legion XIII,-44.0,4,4,0,0,13
+greenbrier-2024,Greenbrier 2024,2024,Majesticks Golf Club,-14.0,4,13,0,0,13
+greenbrier-2024,Greenbrier 2024,2024,RangeGoats GC,-35.0,4,6,0,0,13
+greenbrier-2024,Greenbrier 2024,2024,Ripper GC,-56.0,4,1,1,1,13
+greenbrier-2024,Greenbrier 2024,2024,Smash GC,-55.0,4,2,0,1,13
+greenbrier-2024,Greenbrier 2024,2024,Southern Guards GC,-28.0,4,9,0,0,13
+greenbrier-2024,Greenbrier 2024,2024,Torque GC,-38.0,4,5,0,0,13
+hong-kong-2024,Hong Kong 2024,2024,4Aces GC,-24.0,4,7,0,0,13
+hong-kong-2024,Hong Kong 2024,2024,Cleeks Golf Club,-28.0,4,6,0,0,13
+hong-kong-2024,Hong Kong 2024,2024,Crushers GC,-38.0,4,1,1,1,13
+hong-kong-2024,Hong Kong 2024,2024,Fireballs GC,-29.0,4,4,0,0,13
+hong-kong-2024,Hong Kong 2024,2024,HyFlyers GC,-5.0,4,13,0,0,13
+hong-kong-2024,Hong Kong 2024,2024,Korean Golf Club,-22.0,4,8,0,0,13
+hong-kong-2024,Hong Kong 2024,2024,Legion XIII,-11.0,4,11,0,0,13
+hong-kong-2024,Hong Kong 2024,2024,Majesticks Golf Club,-29.0,4,4,0,0,13
+hong-kong-2024,Hong Kong 2024,2024,RangeGoats GC,-11.0,4,11,0,0,13
+hong-kong-2024,Hong Kong 2024,2024,Ripper GC,-34.0,4,2,0,1,13
+hong-kong-2024,Hong Kong 2024,2024,Smash GC,-17.0,4,10,0,0,13
+hong-kong-2024,Hong Kong 2024,2024,Southern Guards GC,-21.0,4,9,0,0,13
+hong-kong-2024,Hong Kong 2024,2024,Torque GC,-31.0,4,3,0,1,13
+hong-kong-2025,Hong Kong 2025,2025,4Aces GC,-23.0,4,8,0,0,13
+hong-kong-2025,Hong Kong 2025,2025,Cleeks Golf Club,-20.0,4,11,0,0,13
+hong-kong-2025,Hong Kong 2025,2025,Crushers GC,-22.0,4,9,0,0,13
+hong-kong-2025,Hong Kong 2025,2025,Fireballs GC,-37.0,4,1,1,1,13
+hong-kong-2025,Hong Kong 2025,2025,HyFlyers GC,-34.0,4,3,0,1,13
+hong-kong-2025,Hong Kong 2025,2025,Korean Golf Club,-21.0,4,10,0,0,13
+hong-kong-2025,Hong Kong 2025,2025,Legion XIII,-33.0,4,5,0,0,13
+hong-kong-2025,Hong Kong 2025,2025,Majesticks Golf Club,-6.0,4,13,0,0,13
+hong-kong-2025,Hong Kong 2025,2025,RangeGoats GC,-24.0,4,7,0,0,13
+hong-kong-2025,Hong Kong 2025,2025,Ripper GC,-34.0,4,3,0,1,13
+hong-kong-2025,Hong Kong 2025,2025,Smash GC,-17.0,4,12,0,0,13
+hong-kong-2025,Hong Kong 2025,2025,Southern Guards GC,-36.0,4,2,0,1,13
+hong-kong-2025,Hong Kong 2025,2025,Torque GC,-33.0,4,5,0,0,13
+houston-2024,Houston 2024,2024,4Aces GC,-23.0,4,6,0,0,13
+houston-2024,Houston 2024,2024,Cleeks Golf Club,-30.0,4,1,1,1,13
+houston-2024,Houston 2024,2024,Crushers GC,-28.0,4,3,0,1,13
+houston-2024,Houston 2024,2024,Fireballs GC,-28.0,4,3,0,1,13
+houston-2024,Houston 2024,2024,HyFlyers GC,-12.0,4,8,0,0,13
+houston-2024,Houston 2024,2024,Korean Golf Club,-1.0,4,13,0,0,13
+houston-2024,Houston 2024,2024,Legion XIII,-12.0,3,8,0,0,13
+houston-2024,Houston 2024,2024,Majesticks Golf Club,-13.0,4,7,0,0,13
+houston-2024,Houston 2024,2024,RangeGoats GC,-4.0,4,11,0,0,13
+houston-2024,Houston 2024,2024,Ripper GC,-11.0,4,10,0,0,13
+houston-2024,Houston 2024,2024,Smash GC,-30.0,4,1,1,1,13
+houston-2024,Houston 2024,2024,Southern Guards GC,-2.0,3,12,0,0,13
+houston-2024,Houston 2024,2024,Torque GC,-25.0,4,5,0,0,13
+indianapolis-2025,Indianapolis 2025,2025,4Aces GC,-49.0,4,4,0,0,13
+indianapolis-2025,Indianapolis 2025,2025,Cleeks Golf Club,-22.0,4,12,0,0,13
+indianapolis-2025,Indianapolis 2025,2025,Crushers GC,-48.0,4,5,0,0,13
+indianapolis-2025,Indianapolis 2025,2025,Fireballs GC,-50.0,4,3,0,1,13
+indianapolis-2025,Indianapolis 2025,2025,HyFlyers GC,-40.0,4,9,0,0,13
+indianapolis-2025,Indianapolis 2025,2025,Korean Golf Club,-25.0,4,11,0,0,13
+indianapolis-2025,Indianapolis 2025,2025,Legion XIII,-54.0,4,2,0,1,13
+indianapolis-2025,Indianapolis 2025,2025,Majesticks Golf Club,-45.0,4,6,0,0,13
+indianapolis-2025,Indianapolis 2025,2025,RangeGoats GC,-41.0,4,8,0,0,13
+indianapolis-2025,Indianapolis 2025,2025,Ripper GC,-18.0,4,13,0,0,13
+indianapolis-2025,Indianapolis 2025,2025,Smash GC,-27.0,4,10,0,0,13
+indianapolis-2025,Indianapolis 2025,2025,Southern Guards GC,-42.0,4,7,0,0,13
+indianapolis-2025,Indianapolis 2025,2025,Torque GC,-64.0,4,1,1,1,13
+jeddah-2022,Jeddah 2022,2022,Cleeks Golf Club,-14.0,3,5,0,0,8
+jeddah-2022,Jeddah 2022,2022,Crushers GC,-29.0,4,3,0,1,8
+jeddah-2022,Jeddah 2022,2022,Fireballs GC,-30.0,4,2,0,1,8
+jeddah-2022,Jeddah 2022,2022,Korean Golf Club,-9.0,3,8,0,0,8
+jeddah-2022,Jeddah 2022,2022,Majesticks Golf Club,-12.0,4,7,0,0,8
+jeddah-2022,Jeddah 2022,2022,Smash GC,-36.0,4,1,1,1,8
+jeddah-2022,Jeddah 2022,2022,Southern Guards GC,-13.0,4,6,0,0,8
+jeddah-2022,Jeddah 2022,2022,Torque GC,-18.0,4,4,0,0,8
+jeddah-2023,Jeddah 2023,2023,4Aces GC,-26.0,4,5,0,0,12
+jeddah-2023,Jeddah 2023,2023,Cleeks Golf Club,-27.0,4,3,0,1,12
+jeddah-2023,Jeddah 2023,2023,Crushers GC,-25.0,4,6,0,0,12
+jeddah-2023,Jeddah 2023,2023,Fireballs GC,-35.0,4,1,1,1,12
+jeddah-2023,Jeddah 2023,2023,HyFlyers GC,-19.0,4,8,0,0,12
+jeddah-2023,Jeddah 2023,2023,Korean Golf Club,-19.0,4,8,0,0,12
+jeddah-2023,Jeddah 2023,2023,Majesticks Golf Club,-11.0,4,12,0,0,12
+jeddah-2023,Jeddah 2023,2023,RangeGoats GC,-31.0,4,2,0,1,12
+jeddah-2023,Jeddah 2023,2023,Ripper GC,-12.0,4,11,0,0,12
+jeddah-2023,Jeddah 2023,2023,Smash GC,-17.0,4,10,0,0,12
+jeddah-2023,Jeddah 2023,2023,Southern Guards GC,-22.0,4,7,0,0,12
+jeddah-2023,Jeddah 2023,2023,Torque GC,-27.0,4,3,0,1,12
+korea-2025,Korea 2025,2025,4Aces GC,-12.0,4,8,0,0,13
+korea-2025,Korea 2025,2025,Cleeks Golf Club,4.0,4,12,0,0,13
+korea-2025,Korea 2025,2025,Crushers GC,-35.0,4,1,1,1,13
+korea-2025,Korea 2025,2025,Fireballs GC,-5.0,4,10,0,0,13
+korea-2025,Korea 2025,2025,HyFlyers GC,-2.0,4,11,0,0,13
+korea-2025,Korea 2025,2025,Korean Golf Club,8.0,4,13,0,0,13
+korea-2025,Korea 2025,2025,Legion XIII,-13.0,4,5,0,0,13
+korea-2025,Korea 2025,2025,Majesticks Golf Club,-7.0,4,9,0,0,13
+korea-2025,Korea 2025,2025,RangeGoats GC,-14.0,4,4,0,0,13
+korea-2025,Korea 2025,2025,Ripper GC,-13.0,4,5,0,0,13
+korea-2025,Korea 2025,2025,Smash GC,-26.0,4,2,0,1,13
+korea-2025,Korea 2025,2025,Southern Guards GC,-13.0,4,5,0,0,13
+korea-2025,Korea 2025,2025,Torque GC,-18.0,4,3,0,1,13
+las-vegas-2024,Las Vegas 2024,2024,4Aces GC,-20.0,4,3,0,1,13
+las-vegas-2024,Las Vegas 2024,2024,Cleeks Golf Club,-8.0,4,9,0,0,13
+las-vegas-2024,Las Vegas 2024,2024,Crushers GC,-17.0,4,5,0,0,13
+las-vegas-2024,Las Vegas 2024,2024,Fireballs GC,-14.0,4,6,0,0,13
+las-vegas-2024,Las Vegas 2024,2024,HyFlyers GC,8.0,4,12,0,0,13
+las-vegas-2024,Las Vegas 2024,2024,Korean Golf Club,-1.0,4,11,0,0,13
+las-vegas-2024,Las Vegas 2024,2024,Legion XIII,-19.0,4,4,0,0,13
+las-vegas-2024,Las Vegas 2024,2024,Majesticks Golf Club,-12.0,4,7,0,0,13
+las-vegas-2024,Las Vegas 2024,2024,RangeGoats GC,-28.0,4,2,0,1,13
+las-vegas-2024,Las Vegas 2024,2024,Ripper GC,-9.0,4,8,0,0,13
+las-vegas-2024,Las Vegas 2024,2024,Smash GC,-35.0,4,1,1,1,13
+las-vegas-2024,Las Vegas 2024,2024,Southern Guards GC,9.0,4,13,0,0,13
+las-vegas-2024,Las Vegas 2024,2024,Torque GC,-7.0,4,10,0,0,13
+london-2022,London 2022,2022,Cleeks Golf Club,16.0,4,3,0,1,8
+london-2022,London 2022,2022,Crushers GC,16.0,4,3,0,1,8
+london-2022,London 2022,2022,Fireballs GC,33.0,4,6,0,0,8
+london-2022,London 2022,2022,Korean Golf Club,47.0,4,8,0,0,8
+london-2022,London 2022,2022,Majesticks Golf Club,14.0,4,2,0,1,8
+london-2022,London 2022,2022,Smash GC,45.0,4,7,0,0,8
+london-2022,London 2022,2022,Southern Guards GC,-17.0,4,1,1,1,8
+london-2022,London 2022,2022,Torque GC,31.0,4,5,0,0,8
+london-2023,London 2023,2023,4Aces GC,-40.0,4,1,1,1,12
+london-2023,London 2023,2023,Cleeks Golf Club,-13.0,4,8,0,0,12
+london-2023,London 2023,2023,Crushers GC,-14.0,3,7,0,0,12
+london-2023,London 2023,2023,Fireballs GC,-22.0,4,6,0,0,12
+london-2023,London 2023,2023,HyFlyers GC,-11.0,4,9,0,0,12
+london-2023,London 2023,2023,Korean Golf Club,-8.0,4,12,0,0,12
+london-2023,London 2023,2023,Majesticks Golf Club,-25.0,4,4,0,0,12
+london-2023,London 2023,2023,RangeGoats GC,-24.0,4,5,0,0,12
+london-2023,London 2023,2023,Ripper GC,-32.0,4,2,0,1,12
+london-2023,London 2023,2023,Smash GC,-9.0,4,11,0,0,12
+london-2023,London 2023,2023,Southern Guards GC,-28.0,4,3,0,1,12
+london-2023,London 2023,2023,Torque GC,-10.0,4,10,0,0,12
+mayakoba-2023,Mayakoba 2023,2023,4Aces GC,-8.0,4,2,0,1,12
+mayakoba-2023,Mayakoba 2023,2023,Cleeks Golf Club,20.0,4,11,0,0,12
+mayakoba-2023,Mayakoba 2023,2023,Crushers GC,-21.0,4,1,1,1,12
+mayakoba-2023,Mayakoba 2023,2023,Fireballs GC,-7.0,4,3,0,1,12
+mayakoba-2023,Mayakoba 2023,2023,HyFlyers GC,-2.0,4,5,0,0,12
+mayakoba-2023,Mayakoba 2023,2023,Korean Golf Club,22.0,4,12,0,0,12
+mayakoba-2023,Mayakoba 2023,2023,Majesticks Golf Club,15.0,4,10,0,0,12
+mayakoba-2023,Mayakoba 2023,2023,RangeGoats GC,5.0,4,8,0,0,12
+mayakoba-2023,Mayakoba 2023,2023,Ripper GC,1.0,4,6,0,0,12
+mayakoba-2023,Mayakoba 2023,2023,Smash GC,9.0,4,9,0,0,12
+mayakoba-2023,Mayakoba 2023,2023,Southern Guards GC,1.0,4,6,0,0,12
+mayakoba-2023,Mayakoba 2023,2023,Torque GC,-7.0,4,3,0,1,12
+mayakoba-2024,Mayakoba 2024,2024,4Aces GC,14.0,4,12,0,0,13
+mayakoba-2024,Mayakoba 2024,2024,Cleeks Golf Club,0.0,4,8,0,0,13
+mayakoba-2024,Mayakoba 2024,2024,Crushers GC,-17.0,4,2,0,1,13
+mayakoba-2024,Mayakoba 2024,2024,Fireballs GC,-8.0,4,5,0,0,13
+mayakoba-2024,Mayakoba 2024,2024,HyFlyers GC,14.0,4,12,0,0,13
+mayakoba-2024,Mayakoba 2024,2024,Korean Golf Club,9.0,4,10,0,0,13
+mayakoba-2024,Mayakoba 2024,2024,Legion XIII,-19.0,4,1,1,1,13
+mayakoba-2024,Mayakoba 2024,2024,Majesticks Golf Club,0.0,4,8,0,0,13
+mayakoba-2024,Mayakoba 2024,2024,RangeGoats GC,13.0,4,11,0,0,13
+mayakoba-2024,Mayakoba 2024,2024,Ripper GC,-11.0,4,3,0,1,13
+mayakoba-2024,Mayakoba 2024,2024,Smash GC,-7.0,4,6,0,0,13
+mayakoba-2024,Mayakoba 2024,2024,Southern Guards GC,-7.0,4,6,0,0,13
+mayakoba-2024,Mayakoba 2024,2024,Torque GC,-9.0,4,4,0,0,13
+mexico-city-2025,Mexico City 2025,2025,4Aces GC,-20.0,4,4,0,0,13
+mexico-city-2025,Mexico City 2025,2025,Cleeks Golf Club,14.0,4,11,0,0,13
+mexico-city-2025,Mexico City 2025,2025,Crushers GC,-15.0,4,5,0,0,13
+mexico-city-2025,Mexico City 2025,2025,Fireballs GC,4.0,4,9,0,0,13
+mexico-city-2025,Mexico City 2025,2025,HyFlyers GC,9.0,4,10,0,0,13
+mexico-city-2025,Mexico City 2025,2025,Korean Golf Club,25.0,4,13,0,0,13
+mexico-city-2025,Mexico City 2025,2025,Legion XIII,-28.0,4,1,1,1,13
+mexico-city-2025,Mexico City 2025,2025,Majesticks Golf Club,15.0,4,12,0,0,13
+mexico-city-2025,Mexico City 2025,2025,RangeGoats GC,1.0,3,8,0,0,13
+mexico-city-2025,Mexico City 2025,2025,Ripper GC,-26.0,4,2,0,1,13
+mexico-city-2025,Mexico City 2025,2025,Smash GC,-6.0,4,6,0,0,13
+mexico-city-2025,Mexico City 2025,2025,Southern Guards GC,-5.0,4,7,0,0,13
+mexico-city-2025,Mexico City 2025,2025,Torque GC,-21.0,4,3,0,1,13
+miami-2024,Miami 2024,2024,4Aces GC,0.0,4,7,0,0,13
+miami-2024,Miami 2024,2024,Cleeks Golf Club,1.0,4,8,0,0,13
+miami-2024,Miami 2024,2024,Crushers GC,-3.0,4,6,0,0,13
+miami-2024,Miami 2024,2024,Fireballs GC,-7.0,4,5,0,0,13
+miami-2024,Miami 2024,2024,HyFlyers GC,14.0,4,11,0,0,13
+miami-2024,Miami 2024,2024,Korean Golf Club,16.0,4,12,0,0,13
+miami-2024,Miami 2024,2024,Legion XIII,-20.0,4,1,1,1,13
+miami-2024,Miami 2024,2024,Majesticks Golf Club,18.0,4,13,0,0,13
+miami-2024,Miami 2024,2024,RangeGoats GC,-17.0,4,2,0,1,13
+miami-2024,Miami 2024,2024,Ripper GC,9.0,3,10,0,0,13
+miami-2024,Miami 2024,2024,Smash GC,2.0,4,9,0,0,13
+miami-2024,Miami 2024,2024,Southern Guards GC,-12.0,4,3,0,1,13
+miami-2024,Miami 2024,2024,Torque GC,-9.0,4,4,0,0,13
+miami-2025,Miami 2025,2025,4Aces GC,17.0,4,3,0,1,13
+miami-2025,Miami 2025,2025,Cleeks Golf Club,47.0,4,11,0,0,13
+miami-2025,Miami 2025,2025,Crushers GC,12.0,4,2,0,1,13
+miami-2025,Miami 2025,2025,Fireballs GC,20.0,4,5,0,0,13
+miami-2025,Miami 2025,2025,HyFlyers GC,27.0,4,7,0,0,13
+miami-2025,Miami 2025,2025,Korean Golf Club,29.0,4,8,0,0,13
+miami-2025,Miami 2025,2025,Legion XIII,19.0,4,4,0,0,13
+miami-2025,Miami 2025,2025,Majesticks Golf Club,50.0,4,13,0,0,13
+miami-2025,Miami 2025,2025,RangeGoats GC,47.0,4,11,0,0,13
+miami-2025,Miami 2025,2025,Ripper GC,4.0,4,1,1,1,13
+miami-2025,Miami 2025,2025,Smash GC,30.0,4,9,0,0,13
+miami-2025,Miami 2025,2025,Southern Guards GC,24.0,4,6,0,0,13
+miami-2025,Miami 2025,2025,Torque GC,30.0,4,9,0,0,13
+nashville-2024,Nashville 2024,2024,4Aces GC,-15.0,4,7,0,0,13
+nashville-2024,Nashville 2024,2024,Cleeks Golf Club,-11.0,4,9,0,0,13
+nashville-2024,Nashville 2024,2024,Crushers GC,-39.0,4,2,0,1,13
+nashville-2024,Nashville 2024,2024,Fireballs GC,-14.0,4,8,0,0,13
+nashville-2024,Nashville 2024,2024,HyFlyers GC,-11.0,4,9,0,0,13
+nashville-2024,Nashville 2024,2024,Korean Golf Club,-5.0,4,13,0,0,13
+nashville-2024,Nashville 2024,2024,Legion XIII,-42.0,4,1,1,1,13
+nashville-2024,Nashville 2024,2024,Majesticks Golf Club,-35.0,4,4,0,0,13
+nashville-2024,Nashville 2024,2024,RangeGoats GC,-11.0,4,9,0,0,13
+nashville-2024,Nashville 2024,2024,Ripper GC,-17.0,4,6,0,0,13
+nashville-2024,Nashville 2024,2024,Smash GC,-9.0,4,12,0,0,13
+nashville-2024,Nashville 2024,2024,Southern Guards GC,-22.0,4,5,0,0,13
+nashville-2024,Nashville 2024,2024,Torque GC,-36.0,4,3,0,1,13
+orlando-2023,Orlando 2023,2023,4Aces GC,-35.0,4,1,1,1,12
+orlando-2023,Orlando 2023,2023,Cleeks Golf Club,-23.0,4,5,0,0,12
+orlando-2023,Orlando 2023,2023,Crushers GC,-16.0,4,8,0,0,12
+orlando-2023,Orlando 2023,2023,Fireballs GC,-15.0,4,9,0,0,12
+orlando-2023,Orlando 2023,2023,HyFlyers GC,-14.0,4,10,0,0,12
+orlando-2023,Orlando 2023,2023,Korean Golf Club,-3.0,4,12,0,0,12
+orlando-2023,Orlando 2023,2023,Majesticks Golf Club,-23.0,4,5,0,0,12
+orlando-2023,Orlando 2023,2023,RangeGoats GC,-22.0,4,7,0,0,12
+orlando-2023,Orlando 2023,2023,Ripper GC,-11.0,4,11,0,0,12
+orlando-2023,Orlando 2023,2023,Smash GC,-30.0,4,3,0,1,12
+orlando-2023,Orlando 2023,2023,Southern Guards GC,-25.0,4,4,0,0,12
+orlando-2023,Orlando 2023,2023,Torque GC,-35.0,4,1,1,1,12
+riyadh-2024,Riyadh 2024,2024,4Aces GC,-15.0,4,10,0,0,13
+riyadh-2024,Riyadh 2024,2024,Cleeks Golf Club,-12.0,4,11,0,0,13
+riyadh-2024,Riyadh 2024,2024,Crushers GC,-36.0,4,2,0,1,13
+riyadh-2024,Riyadh 2024,2024,Fireballs GC,-21.0,4,6,0,0,13
+riyadh-2024,Riyadh 2024,2024,HyFlyers GC,-23.0,4,5,0,0,13
+riyadh-2024,Riyadh 2024,2024,Korean Golf Club,-16.0,4,8,0,0,13
+riyadh-2024,Riyadh 2024,2024,Legion XIII,-19.0,4,7,0,0,13
+riyadh-2024,Riyadh 2024,2024,Majesticks Golf Club,0.0,4,13,0,0,13
+riyadh-2024,Riyadh 2024,2024,RangeGoats GC,-3.0,3,12,0,0,13
+riyadh-2024,Riyadh 2024,2024,Ripper GC,-16.0,4,8,0,0,13
+riyadh-2024,Riyadh 2024,2024,Smash GC,-32.0,4,4,0,0,13
+riyadh-2024,Riyadh 2024,2024,Southern Guards GC,-40.0,4,1,1,1,13
+riyadh-2024,Riyadh 2024,2024,Torque GC,-33.0,4,3,0,1,13
+riyadh-2025,Riyadh 2025,2025,4Aces GC,-21.0,4,11,0,0,13
+riyadh-2025,Riyadh 2025,2025,Cleeks Golf Club,-28.0,4,6,0,0,13
+riyadh-2025,Riyadh 2025,2025,Crushers GC,-36.0,4,4,0,0,13
+riyadh-2025,Riyadh 2025,2025,Fireballs GC,-34.0,4,5,0,0,13
+riyadh-2025,Riyadh 2025,2025,HyFlyers GC,-18.0,4,12,0,0,13
+riyadh-2025,Riyadh 2025,2025,Korean Golf Club,-11.0,4,13,0,0,13
+riyadh-2025,Riyadh 2025,2025,Legion XIII,-50.0,4,1,1,1,13
+riyadh-2025,Riyadh 2025,2025,Majesticks Golf Club,-25.0,4,8,0,0,13
+riyadh-2025,Riyadh 2025,2025,RangeGoats GC,-39.0,4,2,0,1,13
+riyadh-2025,Riyadh 2025,2025,Ripper GC,-39.0,4,2,0,1,13
+riyadh-2025,Riyadh 2025,2025,Smash GC,-23.0,4,10,0,0,13
+riyadh-2025,Riyadh 2025,2025,Southern Guards GC,-25.0,4,8,0,0,13
+riyadh-2025,Riyadh 2025,2025,Torque GC,-27.0,4,7,0,0,13
+riyadh-2026,Riyadh 2026,2026,4Aces GC,-23.0,4,3,0,1,14
+riyadh-2026,Riyadh 2026,2026,Cleeks Golf Club,-11.0,4,12,0,0,14
+riyadh-2026,Riyadh 2026,2026,Crushers GC,-16.0,4,8,0,0,14
+riyadh-2026,Riyadh 2026,2026,Fireballs GC,-21.0,4,4,0,0,14
+riyadh-2026,Riyadh 2026,2026,HyFlyers GC,-3.0,4,14,0,0,14
+riyadh-2026,Riyadh 2026,2026,Korean Golf Club,-15.0,4,9,0,0,14
+riyadh-2026,Riyadh 2026,2026,Legion XIII,-13.0,4,10,0,0,14
+riyadh-2026,Riyadh 2026,2026,Majesticks Golf Club,-12.0,4,11,0,0,14
+riyadh-2026,Riyadh 2026,2026,RangeGoats GC,-19.0,4,7,0,0,14
+riyadh-2026,Riyadh 2026,2026,Ripper GC,-26.0,4,2,0,1,14
+riyadh-2026,Riyadh 2026,2026,Smash GC,-8.0,4,13,0,0,14
+riyadh-2026,Riyadh 2026,2026,Southern Guards GC,-20.0,4,5,0,0,14
+riyadh-2026,Riyadh 2026,2026,Torque GC,-20.0,4,5,0,0,14
+riyadh-2026,Riyadh 2026,2026,Wild Card,-30.0,5,1,1,1,14
+singapore-2023,Singapore 2023,2023,4Aces GC,-27.0,4,6,0,0,12
+singapore-2023,Singapore 2023,2023,Cleeks Golf Club,-7.0,4,12,0,0,12
+singapore-2023,Singapore 2023,2023,Crushers GC,-29.0,4,4,0,0,12
+singapore-2023,Singapore 2023,2023,Fireballs GC,-29.0,4,4,0,0,12
+singapore-2023,Singapore 2023,2023,HyFlyers GC,-16.0,4,9,0,0,12
+singapore-2023,Singapore 2023,2023,Korean Golf Club,-27.0,4,6,0,0,12
+singapore-2023,Singapore 2023,2023,Majesticks Golf Club,-16.0,4,9,0,0,12
+singapore-2023,Singapore 2023,2023,RangeGoats GC,-40.0,4,1,1,1,12
+singapore-2023,Singapore 2023,2023,Ripper GC,-32.0,4,2,0,1,12
+singapore-2023,Singapore 2023,2023,Smash GC,-27.0,4,6,0,0,12
+singapore-2023,Singapore 2023,2023,Southern Guards GC,-13.0,4,11,0,0,12
+singapore-2023,Singapore 2023,2023,Torque GC,-31.0,4,3,0,1,12
+singapore-2024,Singapore 2024,2024,4Aces GC,-15.0,4,9,0,0,13
+singapore-2024,Singapore 2024,2024,Cleeks Golf Club,-30.0,4,3,0,1,13
+singapore-2024,Singapore 2024,2024,Crushers GC,-12.0,4,10,0,0,13
+singapore-2024,Singapore 2024,2024,Fireballs GC,-31.0,4,2,0,1,13
+singapore-2024,Singapore 2024,2024,HyFlyers GC,-12.0,4,10,0,0,13
+singapore-2024,Singapore 2024,2024,Korean Golf Club,1.0,4,12,0,0,13
+singapore-2024,Singapore 2024,2024,Legion XIII,-26.0,4,5,0,0,13
+singapore-2024,Singapore 2024,2024,Majesticks Golf Club,6.0,4,13,0,0,13
+singapore-2024,Singapore 2024,2024,RangeGoats GC,-19.0,4,7,0,0,13
+singapore-2024,Singapore 2024,2024,Ripper GC,-32.0,4,1,1,1,13
+singapore-2024,Singapore 2024,2024,Smash GC,-28.0,4,4,0,0,13
+singapore-2024,Singapore 2024,2024,Southern Guards GC,-19.0,4,7,0,0,13
+singapore-2024,Singapore 2024,2024,Torque GC,-21.0,4,6,0,0,13
+singapore-2025,Singapore 2025,2025,4Aces GC,-18.0,4,3,0,1,13
+singapore-2025,Singapore 2025,2025,Cleeks Golf Club,17.0,4,12,0,0,13
+singapore-2025,Singapore 2025,2025,Crushers GC,-13.0,4,5,0,0,13
+singapore-2025,Singapore 2025,2025,Fireballs GC,-22.0,4,1,1,1,13
+singapore-2025,Singapore 2025,2025,HyFlyers GC,-11.0,4,7,0,0,13
+singapore-2025,Singapore 2025,2025,Korean Golf Club,2.0,4,11,0,0,13
+singapore-2025,Singapore 2025,2025,Legion XIII,-19.0,4,2,0,1,13
+singapore-2025,Singapore 2025,2025,Majesticks Golf Club,19.0,4,13,0,0,13
+singapore-2025,Singapore 2025,2025,RangeGoats GC,-6.0,4,9,0,0,13
+singapore-2025,Singapore 2025,2025,Ripper GC,0.0,4,10,0,0,13
+singapore-2025,Singapore 2025,2025,Smash GC,-10.0,4,8,0,0,13
+singapore-2025,Singapore 2025,2025,Southern Guards GC,-12.0,4,6,0,0,13
+singapore-2025,Singapore 2025,2025,Torque GC,-16.0,4,4,0,0,13
+tucson-2023,Tucson 2023,2023,4Aces GC,20.0,2,1,1,1,12
+tucson-2023,Tucson 2023,2023,Cleeks Golf Club,91.0,3,12,0,0,12
+tucson-2023,Tucson 2023,2023,Crushers GC,52.0,1,10,0,0,12
+tucson-2023,Tucson 2023,2023,Fireballs GC,47.0,2,8,0,0,12
+tucson-2023,Tucson 2023,2023,HyFlyers GC,44.0,2,5,0,0,12
+tucson-2023,Tucson 2023,2023,Korean Golf Club,32.0,4,3,0,1,12
+tucson-2023,Tucson 2023,2023,Majesticks Golf Club,46.0,1,7,0,0,12
+tucson-2023,Tucson 2023,2023,RangeGoats GC,45.0,2,6,0,0,12
+tucson-2023,Tucson 2023,2023,Ripper GC,25.0,1,2,0,1,12
+tucson-2023,Tucson 2023,2023,Smash GC,47.0,2,8,0,0,12
+tucson-2023,Tucson 2023,2023,Southern Guards GC,55.0,1,11,0,0,12
+tucson-2023,Tucson 2023,2023,Torque GC,42.0,2,4,0,0,12
+tulsa-2023,Tulsa 2023,2023,4Aces GC,-42.0,4,1,1,1,12
+tulsa-2023,Tulsa 2023,2023,Cleeks Golf Club,-18.0,4,11,0,0,12
+tulsa-2023,Tulsa 2023,2023,Crushers GC,-35.0,4,4,0,0,12
+tulsa-2023,Tulsa 2023,2023,Fireballs GC,-32.0,4,6,0,0,12
+tulsa-2023,Tulsa 2023,2023,HyFlyers GC,-21.0,4,10,0,0,12
+tulsa-2023,Tulsa 2023,2023,Korean Golf Club,-16.0,4,12,0,0,12
+tulsa-2023,Tulsa 2023,2023,Majesticks Golf Club,-23.0,3,9,0,0,12
+tulsa-2023,Tulsa 2023,2023,RangeGoats GC,-37.0,4,3,0,1,12
+tulsa-2023,Tulsa 2023,2023,Ripper GC,-26.0,4,8,0,0,12
+tulsa-2023,Tulsa 2023,2023,Smash GC,-35.0,4,4,0,0,12
+tulsa-2023,Tulsa 2023,2023,Southern Guards GC,-40.0,4,2,0,1,12
+tulsa-2023,Tulsa 2023,2023,Torque GC,-27.0,4,7,0,0,12
+uk-2024,Uk 2024,2024,4Aces GC,-5.0,4,11,0,0,13
+uk-2024,Uk 2024,2024,Cleeks Golf Club,-9.0,4,10,0,0,13
+uk-2024,Uk 2024,2024,Crushers GC,-17.0,4,5,0,0,13
+uk-2024,Uk 2024,2024,Fireballs GC,-17.0,4,5,0,0,13
+uk-2024,Uk 2024,2024,HyFlyers GC,-15.0,4,8,0,0,13
+uk-2024,Uk 2024,2024,Korean Golf Club,0.0,4,12,0,0,13
+uk-2024,Uk 2024,2024,Legion XIII,-21.0,4,1,1,1,13
+uk-2024,Uk 2024,2024,Majesticks Golf Club,2.0,4,13,0,0,13
+uk-2024,Uk 2024,2024,RangeGoats GC,-17.0,4,5,0,0,13
+uk-2024,Uk 2024,2024,Ripper GC,-21.0,3,1,1,1,13
+uk-2024,Uk 2024,2024,Smash GC,-19.0,4,3,0,1,13
+uk-2024,Uk 2024,2024,Southern Guards GC,-15.0,4,8,0,0,13
+uk-2024,Uk 2024,2024,Torque GC,-18.0,4,4,0,0,13
+uk-2025,Uk 2025,2025,4Aces GC,-5.0,4,11,0,0,13
+uk-2025,Uk 2025,2025,Cleeks Golf Club,-14.0,4,7,0,0,13
+uk-2025,Uk 2025,2025,Crushers GC,-23.0,4,4,0,0,13
+uk-2025,Uk 2025,2025,Fireballs GC,-23.0,4,4,0,0,13
+uk-2025,Uk 2025,2025,HyFlyers GC,-14.0,4,7,0,0,13
+uk-2025,Uk 2025,2025,Korean Golf Club,7.0,4,13,0,0,13
+uk-2025,Uk 2025,2025,Legion XIII,-35.0,4,1,1,1,13
+uk-2025,Uk 2025,2025,Majesticks Golf Club,-3.0,4,12,0,0,13
+uk-2025,Uk 2025,2025,RangeGoats GC,-6.0,4,10,0,0,13
+uk-2025,Uk 2025,2025,Ripper GC,-17.0,4,6,0,0,13
+uk-2025,Uk 2025,2025,Smash GC,-9.0,4,9,0,0,13
+uk-2025,Uk 2025,2025,Southern Guards GC,-26.0,4,3,0,1,13
+uk-2025,Uk 2025,2025,Torque GC,-27.0,4,2,0,1,13
+va-2025,Va 2025,2025,4Aces GC,-34.0,4,2,0,1,13
+va-2025,Va 2025,2025,Cleeks Golf Club,-14.0,4,9,0,0,13
+va-2025,Va 2025,2025,Crushers GC,-36.0,4,1,1,1,13
+va-2025,Va 2025,2025,Fireballs GC,-4.0,4,12,0,0,13
+va-2025,Va 2025,2025,HyFlyers GC,-19.0,4,8,0,0,13
+va-2025,Va 2025,2025,Korean Golf Club,-8.0,4,10,0,0,13
+va-2025,Va 2025,2025,Legion XIII,-21.0,4,6,0,0,13
+va-2025,Va 2025,2025,Majesticks Golf Club,-6.0,4,11,0,0,13
+va-2025,Va 2025,2025,RangeGoats GC,-22.0,3,5,0,0,13
+va-2025,Va 2025,2025,Ripper GC,-4.0,4,12,0,0,13
+va-2025,Va 2025,2025,Smash GC,-31.0,4,3,0,1,13
+va-2025,Va 2025,2025,Southern Guards GC,-20.0,4,7,0,0,13
+va-2025,Va 2025,2025,Torque GC,-25.0,4,4,0,0,13
+valderrama-2023,Valderrama 2023,2023,4Aces GC,6.0,4,3,0,1,12
+valderrama-2023,Valderrama 2023,2023,Cleeks Golf Club,24.0,4,11,0,0,12
+valderrama-2023,Valderrama 2023,2023,Crushers GC,12.0,4,7,0,0,12
+valderrama-2023,Valderrama 2023,2023,Fireballs GC,7.0,4,4,0,0,12
+valderrama-2023,Valderrama 2023,2023,HyFlyers GC,9.0,4,5,0,0,12
+valderrama-2023,Valderrama 2023,2023,Korean Golf Club,30.0,4,12,0,0,12
+valderrama-2023,Valderrama 2023,2023,Majesticks Golf Club,9.0,4,5,0,0,12
+valderrama-2023,Valderrama 2023,2023,RangeGoats GC,1.0,4,2,0,1,12
+valderrama-2023,Valderrama 2023,2023,Ripper GC,17.0,4,10,0,0,12
+valderrama-2023,Valderrama 2023,2023,Smash GC,14.0,4,8,0,0,12
+valderrama-2023,Valderrama 2023,2023,Southern Guards GC,16.0,4,9,0,0,12
+valderrama-2023,Valderrama 2023,2023,Torque GC,-12.0,4,1,1,1,12
