@@ -41,10 +41,6 @@ LIV_ROSTER = {
     "Wild Card":            ["Yosuke Asaji", "Bjorn Hellgren", "Richard T. Lee", "Miguel Tabuena"],
 }
 
-ALL_LIV_PLAYERS = sorted(set(
-    p for team_players in LIV_ROSTER.values() for p in team_players
-))
-
 PLAYER_TEAM = {
     player: team
     for team, players in LIV_ROSTER.items()
@@ -144,6 +140,14 @@ _HIST_PLAYER_TEAM: dict[tuple[str, int], str] = {
     for team, players in teams.items()
     for player in players
 }
+
+# All players who have ever been on LIV (any season)
+ALL_LIV_PLAYERS = sorted({
+    player
+    for season_roster in HISTORICAL_ROSTER.values()
+    for team_players in season_roster.values()
+    for player in team_players
+})
 
 # ── Prize money structure ──────────────────────────────────────────────────────
 # Approximate individual payouts based on ~$25M total purse per LIV event (2022–2025).
@@ -307,17 +311,20 @@ def build_player_sg_timeseries(stats_df: pd.DataFrame) -> pd.DataFrame:
     pga_covered: set[tuple] = set()
 
     for player in ALL_LIV_PLAYERS:
-        lname = _last_name(player)
-        mask = stats_df['playerName'].str.lower().str.contains(lname, na=False, regex=False)
-        matches = stats_df[mask]
-        if matches.empty:
-            continue
-
-        if player.split()[0].lower() in matches['playerName'].str.lower().values:
-            row = matches[matches['playerName'].str.lower().str.startswith(
-                player.split()[0].lower())].iloc[0]
+        # Exact full-name match first, then first+last, then last-name fallback
+        exact = stats_df[stats_df['playerName'].str.lower() == player.lower()]
+        if not exact.empty:
+            row = exact.iloc[0]
         else:
-            row = matches.iloc[0]
+            lname = _last_name(player)
+            fname = player.split()[0].lower()
+            by_last = stats_df[stats_df['playerName'].str.lower().str.contains(
+                lname, na=False, regex=False)]
+            if by_last.empty:
+                continue
+            by_first = by_last[by_last['playerName'].str.lower().str.contains(
+                fname, na=False, regex=False)]
+            row = by_first.iloc[0] if not by_first.empty else by_last.iloc[0]
 
         team = PLAYER_TEAM.get(player, 'Unknown')
 

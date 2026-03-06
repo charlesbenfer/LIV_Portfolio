@@ -1236,7 +1236,10 @@ elif page == "ROI & Acquisition":
         val_roi['major_top10'] = 0
     val_roi['major_top10'] = val_roi['major_top10'].fillna(0).astype(int)
 
-    val_roi['peak_sg_pct']    = val_roi['peak_sg_total'].rank(pct=True, na_option='keep') * 100
+    # For players with no PGA Tour data in range, fall back to LIV estimated SG.
+    # These are primarily European Tour depth signings with no PGA Track record.
+    val_roi['peak_sg_for_prestige'] = val_roi['peak_sg_total'].combine_first(val_roi['est_sg_total'])
+    val_roi['peak_sg_pct']    = val_roi['peak_sg_for_prestige'].rank(pct=True, na_option='keep') * 100
     val_roi['major_pct']      = val_roi['major_top10'].rank(pct=True, na_option='keep') * 100
     val_roi['prestige_score'] = (
         val_roi['peak_sg_pct'].fillna(50) * 0.6 +
@@ -1399,6 +1402,8 @@ elif page == "ROI & Acquisition":
     st.caption(
         "X-axis: prestige score combining career peak SG (60%) and major championship top-10 "
         "count (40%) — a proxy for what LIV was investing in at signing. "
+        "Players with no PGA Tour SG data (primarily European Tour signings) use their LIV "
+        "estimated SG as the skill component. "
         "Y-axis: LIV value score (skill + results + volume on tour). "
         "Bubble size = events played."
     )
