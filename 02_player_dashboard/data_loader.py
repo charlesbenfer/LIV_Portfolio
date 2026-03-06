@@ -56,6 +56,93 @@ NAME_OVERRIDES = {
     'Young-han Song': 'Younghan Song',
     'Sebastian Muñoz': 'Sebastian Munoz',
     'Byeong-Hun An':   'Byeong Hun An',
+    'Jed Morgan':      'Jed Morgan',   # canonical; "Jediah Morgan" was erroneous
+}
+
+# Season-accurate team rosters (first event of each season)
+HISTORICAL_ROSTER: dict[int, dict[str, list[str]]] = {
+    2022: {
+        "4Aces GC":             ["Dustin Johnson", "Talor Gooch", "Pat Perez", "Patrick Reed"],
+        "Southern Guards GC":   ["Louis Oosthuizen", "Hennie Du Plessis", "Branden Grace", "Charl Schwartzel"],
+        "Fireballs GC":         ["Sergio Garcia", "Abraham Ancer", "Eugenio Chacarra", "Carlos Ortiz"],
+        "Torque GC":            ["Yuki Inamori", "Ryosuke Kinoshita", "Jinichiro Kozuma", "Hideto Tanihara"],
+        "Korean Golf Club":     ["Kevin Na", "Sadom Kaewkanjana", "Phachara Khongwatmai", "Sihwan Kim"],
+        "Smash GC":             ["Brooks Koepka", "Richard Bland", "Chase Koepka", "Adrian Otaegui"],
+        "RangeGoats GC":        ["Graeme McDowell", "James Piot", "Travis Smyth", "Hudson Swafford"],
+        "Majesticks Golf Club": ["Lee Westwood", "Laurie Canter", "Sam Horsfield", "Ian Poulter"],
+        "Crushers GC":          ["Bryson DeChambeau", "Justin Harding", "Shaun Norris", "Peter Uihlein"],
+        "Cleeks Golf Club":     ["Martin Kaymer", "Turk Pettit", "Ian Snyman", "Scott Vincent"],
+        "HyFlyers GC":          ["Phil Mickelson", "Itthipat Buranatanyarat", "Bernd Wiesberger", "Matthew Wolff"],
+        "Ripper GC":            ["Wade Ormsby", "Matt Jones", "Jed Morgan", "Blake Windred"],
+    },
+    2023: {
+        "Crushers GC":          ["Bryson DeChambeau", "Paul Casey", "Charles Howell III", "Anirban Lahiri"],
+        "4Aces GC":             ["Dustin Johnson", "Pat Perez", "Patrick Reed", "Peter Uihlein"],
+        "Torque GC":            ["Joaquin Niemann", "Sebastian Munoz", "Mito Pereira", "David Puig"],
+        "Southern Guards GC":   ["Louis Oosthuizen", "Dean Burmester", "Branden Grace", "Charl Schwartzel"],
+        "Ripper GC":            ["Cameron Smith", "Matt Jones", "Marc Leishman", "Jed Morgan"],
+        "Fireballs GC":         ["Sergio Garcia", "Abraham Ancer", "Eugenio Chacarra", "Carlos Ortiz"],
+        "HyFlyers GC":          ["Phil Mickelson", "James Piot", "Brendan Steele", "Cameron Tringale"],
+        "RangeGoats GC":        ["Bubba Watson", "Talor Gooch", "Thomas Pieters", "Harold Varner III"],
+        "Smash GC":             ["Brooks Koepka", "Chase Koepka", "Jason Kokrak", "Matthew Wolff"],
+        "Korean Golf Club":     ["Kevin Na", "Sihwan Kim", "Danny Lee", "Scott Vincent"],
+        "Majesticks Golf Club": ["Ian Poulter", "Henrik Stenson", "Lee Westwood", "Sam Horsfield"],
+        "Cleeks Golf Club":     ["Richard Bland", "Laurie Canter", "Graeme McDowell", "Bernd Wiesberger"],
+    },
+    2024: {
+        "Legion XIII":          ["Jon Rahm", "Tyrrell Hatton", "Caleb Surratt", "Kieran Vincent"],
+        "Crushers GC":          ["Bryson DeChambeau", "Paul Casey", "Charles Howell III", "Anirban Lahiri"],
+        "Torque GC":            ["Joaquin Niemann", "Sebastian Munoz", "Carlos Ortiz", "Mito Pereira"],
+        "Ripper GC":            ["Cameron Smith", "Lucas Herbert", "Matt Jones", "Marc Leishman"],
+        "Southern Guards GC":   ["Louis Oosthuizen", "Dean Burmester", "Branden Grace", "Charl Schwartzel"],
+        "Fireballs GC":         ["Sergio Garcia", "Abraham Ancer", "Eugenio Chacarra", "David Puig"],
+        "Smash GC":             ["Brooks Koepka", "Talor Gooch", "Jason Kokrak", "Graeme McDowell"],
+        "Cleeks Golf Club":     ["Martin Kaymer", "Richard Bland", "Adrian Meronk", "Kalle Samooja"],
+        "Majesticks Golf Club": ["Ian Poulter", "Henrik Stenson", "Lee Westwood", "Sam Horsfield"],
+        "HyFlyers GC":          ["Phil Mickelson", "Andy Ogletree", "Brendan Steele", "Cameron Tringale"],
+        "RangeGoats GC":        ["Bubba Watson", "Thomas Pieters", "Peter Uihlein", "Matthew Wolff"],
+        "4Aces GC":             ["Dustin Johnson", "Pat Perez", "Patrick Reed", "Harold Varner III"],
+        "Korean Golf Club":     ["Kevin Na", "Jinichiro Kozuma", "Danny Lee", "Scott Vincent"],
+    },
+    2025: {
+        "Legion XIII":          ["Jon Rahm", "Tyrrell Hatton", "Tom McKibbin", "Caleb Surratt"],
+        "Ripper GC":            ["Cameron Smith", "Lucas Herbert", "Matt Jones", "Marc Leishman"],
+        "RangeGoats GC":        ["Bubba Watson", "Ben Campbell", "Peter Uihlein", "Matthew Wolff"],
+        "Crushers GC":          ["Bryson DeChambeau", "Paul Casey", "Charles Howell III", "Anirban Lahiri"],
+        "Fireballs GC":         ["Sergio Garcia", "Abraham Ancer", "Luis Masaveu", "David Puig"],
+        "Cleeks Golf Club":     ["Martin Kaymer", "Richard Bland", "Frederik Kjettrup", "Adrian Meronk"],
+        "Torque GC":            ["Joaquin Niemann", "Sebastian Munoz", "Carlos Ortiz", "Mito Pereira"],
+        "Southern Guards GC":   ["Louis Oosthuizen", "Dean Burmester", "Branden Grace", "Charl Schwartzel"],
+        "Majesticks Golf Club": ["Ian Poulter", "Henrik Stenson", "Lee Westwood", "Sam Horsfield"],
+        "Smash GC":             ["Brooks Koepka", "Talor Gooch", "Jason Kokrak", "Graeme McDowell"],
+        "4Aces GC":             ["Dustin Johnson", "Thomas Pieters", "Patrick Reed", "Harold Varner III"],
+        "HyFlyers GC":          ["Andy Ogletree", "Ollie Schniederjans", "Brendan Steele", "Cameron Tringale"],
+        "Korean Golf Club":     ["Kevin Na", "Yubin Jang", "Danny Lee", "Wade Ormsby"],
+    },
+    2026: {
+        "4Aces GC":             ["Dustin Johnson", "Thomas Detry", "Anthony Kim", "Thomas Pieters"],
+        "Cleeks Golf Club":     ["Martin Kaymer", "Richard Bland", "Adrian Meronk", "Victor Perez"],
+        "Crushers GC":          ["Bryson DeChambeau", "Paul Casey", "Charles Howell III", "Anirban Lahiri"],
+        "Fireballs GC":         ["Sergio Garcia", "Josele Ballester", "Luis Masaveu", "David Puig"],
+        "HyFlyers GC":          ["Phil Mickelson", "Michael LaSasso", "Brendan Steele", "Cameron Tringale"],
+        "Korean Golf Club":     ["Byeong Hun An", "Minkyu Kim", "Danny Lee", "Younghan Song"],
+        "Legion XIII":          ["Jon Rahm", "Tyrrell Hatton", "Tom McKibbin", "Caleb Surratt"],
+        "Majesticks Golf Club": ["Ian Poulter", "Lee Westwood", "Laurie Canter", "Sam Horsfield"],
+        "RangeGoats GC":        ["Bubba Watson", "Ben Campbell", "Peter Uihlein", "Matthew Wolff"],
+        "Ripper GC":            ["Cameron Smith", "Lucas Herbert", "Marc Leishman", "Elvis Smylie"],
+        "Smash GC":             ["Talor Gooch", "Jason Kokrak", "Graeme McDowell", "Harold Varner III"],
+        "Southern Guards GC":   ["Louis Oosthuizen", "Dean Burmester", "Branden Grace", "Charl Schwartzel"],
+        "Torque GC":            ["Joaquin Niemann", "Abraham Ancer", "Sebastian Munoz", "Carlos Ortiz"],
+        "Wild Card":            ["Yosuke Asaji", "Bjorn Hellgren", "Richard T. Lee", "Miguel Tabuena"],
+    },
+}
+
+# Inverted lookup: (playerName, season) → team
+_HIST_PLAYER_TEAM: dict[tuple[str, int], str] = {
+    (player, season): team
+    for season, teams in HISTORICAL_ROSTER.items()
+    for team, players in teams.items()
+    for player in players
 }
 
 # SG categories tracked
@@ -120,9 +207,14 @@ def load_liv_valuation() -> pd.DataFrame:
     df = (df.sort_values('season')
             .drop_duplicates(subset=['playerName', 'season'], keep='first'))
 
-    # Fill missing team assignments from the current roster mapping.
+    # Fill missing team assignments using season-accurate historical roster first,
+    # then fall back to the current roster for any remaining gaps.
     missing = df['team'].isna() | (df['team'].astype(str).str.strip() == '')
-    df.loc[missing, 'team'] = df.loc[missing, 'playerName'].map(PLAYER_TEAM)
+    df.loc[missing, 'team'] = df.loc[missing].apply(
+        lambda r: _HIST_PLAYER_TEAM.get((r['playerName'], int(r['season'])))
+                  or PLAYER_TEAM.get(r['playerName']),
+        axis=1,
+    )
 
     return df
 
