@@ -145,6 +145,30 @@ _HIST_PLAYER_TEAM: dict[tuple[str, int], str] = {
     for player in players
 }
 
+# ── Prize money structure ──────────────────────────────────────────────────────
+# Approximate individual payouts based on ~$25M total purse per LIV event (2022–2025).
+LIV_PAYOUT: dict[int, int] = {
+    1:  4_000_000, 2:  2_175_000, 3:  1_575_000,
+    4:  1_175_000, 5:    875_000, 6:    750_000,
+    7:    650_000, 8:    550_000, 9:    475_000,
+    10:   425_000, 11:   375_000, 12:   325_000,
+    13:   300_000, 14:   275_000, 15:   250_000,
+    16:   225_000, 17:   200_000, 18:   200_000,
+    19:   175_000, 20:   175_000, 21:   175_000,
+    22:   150_000, 23:   150_000, 24:   150_000,
+}
+_PAYOUT_FLOOR = 125_000  # positions 25–48
+
+
+def calc_prize_money(position_str) -> int:
+    """Estimate individual event prize money from a finish position string (e.g. '1', 'T14', '32')."""
+    try:
+        pos = int(str(position_str).replace('T', '').strip())
+    except (ValueError, AttributeError):
+        return 0
+    return LIV_PAYOUT.get(pos, _PAYOUT_FLOOR if 1 <= pos <= 48 else 0)
+
+
 # SG categories tracked
 SG_CATEGORIES = {
     'SG: Total':        'SG_Total_Avg',
@@ -445,6 +469,59 @@ def build_tournament_history(boards_df: pd.DataFrame) -> pd.DataFrame:
     return subset
 
 
+# ── PGA Tour talent pool builder ───────────────────────────────────────────────
+
+def build_pga_talent_pool(stats_df: pd.DataFrame, n_years: int = 3) -> pd.DataFrame:
+    """
+    Build a recent skill profile for PGA Tour players NOT on the current LIV roster.
+    Only includes players with data in 2022 or later.
+    Returns columns: playerName, last_active_yr, recent_sg_total, sg_ott, sg_app, sg_atg.
+    """
+    liv_last_names = {_last_name(p) for p in ALL_LIV_PLAYERS}
+    recent_years = list(range(2025 - n_years + 1, 2026))  # [2023, 2024, 2025]
+
+    records = []
+    for _, row in stats_df.iterrows():
+        name = str(row.get('playerName', ''))
+        if not name or _last_name(name) in liv_last_names:
+            continue
+
+        sg_by_yr = {
+            yr: float(row[f'{yr}_SG_Total_Avg'])
+            for yr in range(2015, 2026)
+            if f'{yr}_SG_Total_Avg' in stats_df.columns
+            and pd.notna(row.get(f'{yr}_SG_Total_Avg'))
+        }
+        if not sg_by_yr or max(sg_by_yr) < 2022:
+            continue
+
+        recent_sg = [sg_by_yr[yr] for yr in recent_years if yr in sg_by_yr]
+        if not recent_sg:
+            continue
+
+        def _avg(prefix: str) -> float:
+            vals = [
+                float(row[f'{yr}_{prefix}'])
+                for yr in recent_years
+                if f'{yr}_{prefix}' in stats_df.columns
+                and pd.notna(row.get(f'{yr}_{prefix}'))
+            ]
+            return round(float(np.mean(vals)), 3) if vals else np.nan
+
+        records.append({
+            'playerName':      name,
+            'last_active_yr':  int(max(sg_by_yr)),
+            'recent_sg_total': round(float(np.mean(recent_sg)), 3),
+            'sg_ott':          _avg('SG_Off_the_Tee_Avg'),
+            'sg_app':          _avg('SG_Approach_the_Green_Avg'),
+            'sg_atg':          _avg('SG_Around_the_Green_Avg'),
+        })
+
+    return (pd.DataFrame(records)
+              .sort_values('recent_sg_total', ascending=False)
+              .reset_index(drop=True))
+
+
 # ── Cached entry point ─────────────────────────────────────────────────────────
 
 _cache: dict = {}
@@ -455,7 +532,8 @@ def get_data():
     Load and process all data, with simple module-level caching.
     Returns (ts_df, profile_df, boards_df, hist_df,
              liv_results_df, liv_val_df,
-             liv_event_stats_df, liv_season_stats_df, liv_combined_df)
+             liv_event_stats_df, liv_season_stats_df, liv_combined_df,
+             pga_talent_df)
     """
     if 'data' not in _cache:
         stats_df            = load_stats_wide()
@@ -468,6 +546,7 @@ def get_data():
         liv_event_stats_df  = load_liv_event_stats()
         liv_season_stats_df = load_liv_season_stats()
         liv_combined_df     = load_liv_combined_events()
+        pga_talent_df       = build_pga_talent_pool(stats_df)
 
         # ── Filter to only player-seasons where events actually occurred ────────
         # The scraper carries forward identical stats into seasons where a player
@@ -515,5 +594,6 @@ def get_data():
                                        .reset_index(drop=True))
         _cache['data'] = (ts_df, profile_df, boards_df, hist_df,
                           liv_results_df, liv_val_df,
-                          liv_event_stats_df, liv_season_stats_df, liv_combined_df)
+                          liv_event_stats_df, liv_season_stats_df, liv_combined_df,
+                          pga_talent_df)
     return _cache['data']

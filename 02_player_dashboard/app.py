@@ -23,6 +23,7 @@ from data_loader import (
     PLAYER_TEAM,
     YEARS,
     HISTORICAL_ROSTER,
+    calc_prize_money,
 )
 
 # ── Page config ────────────────────────────────────────────────────────────────
@@ -58,7 +59,8 @@ def load():
 
 (ts_df, profile_df, boards_df, hist_df,
  liv_results_df, liv_val_df,
- liv_event_stats_df, liv_season_stats_df, liv_combined_df) = load()
+ liv_event_stats_df, liv_season_stats_df, liv_combined_df,
+ pga_talent_df) = load()
 
 # ── Sidebar ────────────────────────────────────────────────────────────────────
 with st.sidebar:
@@ -72,7 +74,7 @@ with st.sidebar:
     st.markdown("### Navigation")
     page = st.radio(
         "",
-        ["Field Overview", "Player Profile", "Head-to-Head", "Team Analysis"],
+        ["Field Overview", "Player Profile", "Head-to-Head", "Team Analysis", "ROI & Acquisition"],
         label_visibility="collapsed",
     )
     st.markdown("---")
@@ -1158,3 +1160,354 @@ elif page == "Team Analysis":
         )
     st.plotly_chart(fig_sg_all, use_container_width=True)
     st.caption(f"Selected team ({selected_team}) highlighted in gold. Values are team-average XGBoost SG estimates for 2025.")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# PAGE 5: ROI & ACQUISITION
+# ══════════════════════════════════════════════════════════════════════════════
+elif page == "ROI & Acquisition":
+    st.title("ROI & Acquisition Analysis")
+    st.markdown(
+        "Player value metrics, results vs. skill benchmarking, "
+        "and a comparable PGA Tour talent pool for field depth analysis."
+    )
+
+    _GOLD = '#c9a227'
+    _DARK = '#0e0e1a'
+
+    # ── Base dataset: 2025 model predictions for confirmed 2025 roster ─────────
+    _roster_2025 = {p for players in HISTORICAL_ROSTER[2025].values() for p in players}
+    val_roi = liv_val_df[
+        (liv_val_df['season'] == 2025) &
+        (liv_val_df['playerName'].isin(_roster_2025))
+    ].copy()
+
+    # ── Estimated career earnings from recorded event finish positions ──────────
+    if not liv_results_df.empty:
+        _earnings = (
+            liv_results_df[liv_results_df['playerName'].isin(_roster_2025)]
+            .copy()
+        )
+        _earnings['prize'] = _earnings['position'].apply(calc_prize_money)
+        _career_earnings = (
+            _earnings.groupby('playerName')['prize']
+            .sum()
+            .reset_index()
+            .rename(columns={'prize': 'career_earnings'})
+        )
+        val_roi = val_roi.merge(_career_earnings, on='playerName', how='left')
+    else:
+        val_roi['career_earnings'] = np.nan
+
+    # ── Composite value score (0–100) ──────────────────────────────────────────
+    # sg_pct: percentile of est_sg_total vs 2025 field
+    # results_pct: percentile of finish quality (lower avg_position = better)
+    # volume_pct: percentile of events_played
+    val_roi['sg_pct']      = val_roi['est_sg_total'].rank(pct=True, na_option='keep') * 100
+    _inv_pos               = (1.0 / val_roi['avg_position'].replace(0, np.nan))
+    val_roi['results_pct'] = _inv_pos.rank(pct=True, na_option='keep') * 100
+    val_roi['volume_pct']  = val_roi['events_played'].rank(pct=True, na_option='keep') * 100
+    val_roi['value_score'] = (
+        val_roi['sg_pct'].fillna(50) * 0.4 +
+        val_roi['results_pct'].fillna(50) * 0.4 +
+        val_roi['volume_pct'].fillna(50) * 0.2
+    )
+
+    st.markdown("---")
+
+    # ══ SECTION 1: PLAYER VALUE SCORE TABLE ════════════════════════════════════
+    st.subheader("Player Value Score — 2025 Season")
+    st.caption(
+        "Composite score (0–100) weighting estimated skill (40%), results delivery (40%), "
+        "and event volume (20%). Career earnings are estimated from recorded LIV finish positions "
+        "using the public per-event payout structure (~$25M purse)."
+    )
+
+    score_table = val_roi[
+        ['playerName', 'team', 'value_score', 'sg_pct', 'results_pct',
+         'volume_pct', 'est_sg_total', 'avg_position', 'events_played',
+         'wins', 'career_earnings']
+    ].rename(columns={
+        'playerName':      'Player',
+        'team':            'Team',
+        'value_score':     'Value Score',
+        'sg_pct':          'Skill %ile',
+        'results_pct':     'Results %ile',
+        'volume_pct':      'Volume %ile',
+        'est_sg_total':    'Est. SG Total',
+        'avg_position':    'Avg Finish',
+        'events_played':   'Events',
+        'wins':            'Wins',
+        'career_earnings': 'Est. Earnings',
+    }).sort_values('Value Score', ascending=False).reset_index(drop=True)
+    score_table.index = score_table.index + 1
+
+    def _fmt_score(x):  return f'{x:.1f}' if pd.notna(x) else '—'
+    def _fmt_sg(x):     return f'{x:+.3f}' if pd.notna(x) else '—'
+    def _fmt_f1(x):     return f'{x:.1f}' if pd.notna(x) else '—'
+    def _fmt_int(x):    return f'{int(x)}' if pd.notna(x) else '—'
+    def _fmt_earn(x):   return f'${x/1_000_000:.2f}M' if pd.notna(x) and x > 0 else '—'
+
+    pct_cols = ['Value Score', 'Skill %ile', 'Results %ile', 'Volume %ile']
+    st.dataframe(
+        score_table.style
+            .format({
+                'Value Score':   _fmt_score,
+                'Skill %ile':    _fmt_score,
+                'Results %ile':  _fmt_score,
+                'Volume %ile':   _fmt_score,
+                'Est. SG Total': _fmt_sg,
+                'Avg Finish':    _fmt_f1,
+                'Events':        _fmt_int,
+                'Wins':          _fmt_int,
+                'Est. Earnings': _fmt_earn,
+            })
+            .background_gradient(subset=['Value Score'], cmap='RdYlGn', vmin=20, vmax=80),
+        use_container_width=True,
+        height=500,
+    )
+
+    st.markdown("---")
+
+    # ══ SECTION 2: VALUE MATRIX ════════════════════════════════════════════════
+    st.subheader("Value Matrix — Skill vs. Results Delivery")
+    st.caption(
+        "X-axis: estimated SG Total (model skill level). "
+        "Y-axis: results percentile (higher = better average finish vs. field). "
+        "Players above the trend line are over-delivering relative to their skill profile; "
+        "below the line are under-delivering."
+    )
+
+    matrix_df = val_roi[val_roi['avg_position'].notna() & val_roi['est_sg_total'].notna()].copy()
+
+    # Build a consistent team color map
+    all_teams_sorted = sorted(matrix_df['team'].dropna().unique())
+    _palette = px.colors.qualitative.Bold + px.colors.qualitative.Pastel
+    _team_color = {t: _palette[i % len(_palette)] for i, t in enumerate(all_teams_sorted)}
+
+    fig_matrix = go.Figure()
+
+    for team_name in all_teams_sorted:
+        grp = matrix_df[matrix_df['team'] == team_name]
+        if grp.empty:
+            continue
+        fig_matrix.add_trace(go.Scatter(
+            x=grp['est_sg_total'],
+            y=grp['results_pct'],
+            mode='markers+text',
+            name=team_name,
+            text=grp['playerName'].apply(lambda n: n.split()[-1]),
+            textposition='top center',
+            textfont=dict(size=10, color='rgba(255,255,255,0.7)'),
+            marker=dict(
+                color=_team_color[team_name],
+                size=grp['events_played'].fillna(8).clip(4, 20).astype(float) * 1.2,
+                line=dict(width=1, color='rgba(255,255,255,0.3)'),
+                opacity=0.85,
+            ),
+            customdata=grp[['playerName', 'team', 'events_played', 'avg_position', 'wins']].values,
+            hovertemplate=(
+                '<b>%{customdata[0]}</b><br>'
+                'Team: %{customdata[1]}<br>'
+                'Est. SG Total: %{x:.3f}<br>'
+                'Results %ile: %{y:.1f}<br>'
+                'Events: %{customdata[2]:.0f}  |  Avg Finish: %{customdata[3]:.1f}  |  Wins: %{customdata[4]:.0f}'
+                '<extra></extra>'
+            ),
+        ))
+
+    # OLS trend line
+    if len(matrix_df) > 2:
+        _x = matrix_df['est_sg_total'].values
+        _y = matrix_df['results_pct'].values
+        _mask = ~(np.isnan(_x) | np.isnan(_y))
+        if _mask.sum() > 2:
+            _p = np.polyfit(_x[_mask], _y[_mask], 1)
+            _xr = np.linspace(_x[_mask].min(), _x[_mask].max(), 100)
+            fig_matrix.add_trace(go.Scatter(
+                x=_xr, y=np.polyval(_p, _xr),
+                mode='lines', showlegend=False,
+                line=dict(color='rgba(255,255,255,0.3)', dash='dash', width=1),
+                hoverinfo='skip',
+            ))
+
+    # Quadrant labels
+    _x_med = matrix_df['est_sg_total'].median()
+    _y_med = matrix_df['results_pct'].median()
+    for _ann_x, _ann_y, _ann_text in [
+        (_x_med + 0.05, 85, 'Elite'),
+        (_x_med - 0.35, 85, 'Results-Driven'),
+        (_x_med + 0.05, 15, 'Under-Delivering'),
+        (_x_med - 0.35, 15, 'Rebuilding'),
+    ]:
+        fig_matrix.add_annotation(
+            x=_ann_x, y=_ann_y, text=_ann_text,
+            showarrow=False, font=dict(color='rgba(255,255,255,0.25)', size=12),
+            xanchor='center',
+        )
+
+    fig_matrix.add_vline(x=_x_med, line_dash='dot', line_color='rgba(255,255,255,0.2)', line_width=1)
+    fig_matrix.add_hline(y=_y_med, line_dash='dot', line_color='rgba(255,255,255,0.2)', line_width=1)
+    fig_matrix.update_layout(
+        plot_bgcolor=_DARK, paper_bgcolor=_DARK,
+        font_color='white', height=520,
+        xaxis=dict(title='Est. SG Total (2025 Model)'),
+        yaxis=dict(title='Results Percentile (higher = better avg finish)', range=[0, 105]),
+        legend=dict(
+            orientation='v', x=1.01, y=0.5,
+            bgcolor='rgba(0,0,0,0)', borderwidth=0,
+            font=dict(size=11),
+        ),
+        hovermode='closest',
+    )
+    st.plotly_chart(fig_matrix, use_container_width=True)
+
+    st.markdown("---")
+
+    # ══ SECTION 3: FIELD QUALITY BENCHMARKING ══════════════════════════════════
+    st.subheader("Comparable PGA Tour Talent Pool")
+    st.caption(
+        "Recent PGA Tour players (2022–present, not on LIV) with an SG profile "
+        "comparable to the mid-to-upper LIV field tier. Useful for understanding "
+        "where the current LIV skill distribution sits within the broader professional landscape."
+    )
+
+    # SG ceiling at 1.45 naturally avoids current dominant world-ranking players
+    _pool = pga_talent_df[
+        (pga_talent_df['recent_sg_total'] >= 0.25) &
+        (pga_talent_df['recent_sg_total'] <= 1.45) &
+        (pga_talent_df['last_active_yr'] >= 2022)
+    ].copy()
+
+    # LIV 2025 field reference
+    _liv_sg = val_roi['est_sg_total'].dropna()
+
+    col_bench1, col_bench2 = st.columns([3, 2])
+
+    with col_bench1:
+        st.markdown("**SG Distribution: LIV Field vs. Comparable PGA Tier**")
+        fig_dist = go.Figure()
+        fig_dist.add_trace(go.Histogram(
+            x=_liv_sg,
+            name='LIV 2025 (est.)',
+            nbinsx=16,
+            marker_color=_GOLD,
+            opacity=0.75,
+        ))
+        fig_dist.add_trace(go.Histogram(
+            x=_pool['recent_sg_total'],
+            name='PGA Tour comparable tier',
+            nbinsx=16,
+            marker_color='#3498db',
+            opacity=0.65,
+        ))
+        fig_dist.add_vline(
+            x=_liv_sg.median(), line_dash='dash',
+            line_color=_GOLD, line_width=1.5,
+            annotation_text=f'LIV median {_liv_sg.median():.2f}',
+            annotation_font=dict(color=_GOLD, size=10),
+            annotation_position='top right',
+        )
+        fig_dist.add_vline(
+            x=_pool['recent_sg_total'].median(), line_dash='dash',
+            line_color='#3498db', line_width=1.5,
+            annotation_text=f'Pool median {_pool["recent_sg_total"].median():.2f}',
+            annotation_font=dict(color='#3498db', size=10),
+            annotation_position='top left',
+        )
+        fig_dist.update_layout(
+            barmode='overlay',
+            plot_bgcolor=_DARK, paper_bgcolor=_DARK,
+            font_color='white', height=320,
+            xaxis=dict(title='Recent SG Total (3-yr avg)'),
+            yaxis=dict(title='Player Count'),
+            legend=dict(orientation='h', yanchor='bottom', y=1.02),
+        )
+        st.plotly_chart(fig_dist, use_container_width=True)
+
+    with col_bench2:
+        st.markdown("**Comparable Tier Summary**")
+        _m1, _m2 = st.columns(2)
+        _m1.metric("Pool Size", len(_pool))
+        _m2.metric("Avg SG Total", f"{_pool['recent_sg_total'].mean():.3f}")
+        _m1.metric("LIV Field Median", f"{_liv_sg.median():.3f}")
+        _m2.metric("Pool Median", f"{_pool['recent_sg_total'].median():.3f}")
+        st.markdown("---")
+        st.markdown(
+            "Players in the comparable tier have recent SG Total between **+0.25 and +1.45**, "
+            "placing them in a skill band that overlaps substantially with the current LIV field. "
+            "This range represents professional-caliber players who are active at the top level."
+        )
+
+    # Scatter: SG breakdown for comparable pool
+    st.markdown("**Comparable Pool — Skill Breakdown**")
+    _pool_plot = _pool[_pool['sg_ott'].notna() & _pool['sg_app'].notna()].copy()
+
+    if not _pool_plot.empty:
+        _pool_plot['label'] = _pool_plot['last_active_yr'].astype(str)
+        fig_pool = px.scatter(
+            _pool_plot,
+            x='sg_ott',
+            y='sg_app',
+            color='recent_sg_total',
+            color_continuous_scale='RdYlGn',
+            range_color=[0.2, 1.5],
+            size='recent_sg_total',
+            size_max=18,
+            hover_name='playerName',
+            hover_data={'sg_ott': ':.3f', 'sg_app': ':.3f',
+                        'sg_atg': ':.3f', 'recent_sg_total': ':.3f',
+                        'last_active_yr': True},
+            labels={
+                'sg_ott':          'SG: Off the Tee (3-yr avg)',
+                'sg_app':          'SG: Approach (3-yr avg)',
+                'recent_sg_total': 'SG Total',
+                'last_active_yr':  'Last Active',
+            },
+            title='Comparable PGA Tier — OTT vs Approach (bubble size = SG Total)',
+        )
+        # Overlay LIV player averages as gold markers
+        _liv_ott = profile_df['sg_ott'].dropna().mean()
+        _liv_app = profile_df['sg_app'].dropna().mean()
+        fig_pool.add_trace(go.Scatter(
+            x=[_liv_ott], y=[_liv_app],
+            mode='markers',
+            marker=dict(color=_GOLD, size=18, symbol='star',
+                        line=dict(width=2, color='white')),
+            name='LIV Field Avg',
+            hovertemplate=f'LIV Field Avg<br>OTT: {_liv_ott:.3f}<br>App: {_liv_app:.3f}<extra></extra>',
+        ))
+        fig_pool.add_hline(y=0, line_dash='dot', line_color='rgba(255,255,255,0.2)')
+        fig_pool.add_vline(x=0, line_dash='dot', line_color='rgba(255,255,255,0.2)')
+        fig_pool.update_layout(
+            plot_bgcolor=_DARK, paper_bgcolor=_DARK,
+            font_color='white', height=440,
+        )
+        st.plotly_chart(fig_pool, use_container_width=True)
+
+    # Sortable table of comparable pool
+    with st.expander("Full Comparable Tier — Player List"):
+        _pool_disp = _pool[['playerName', 'last_active_yr', 'recent_sg_total',
+                             'sg_ott', 'sg_app', 'sg_atg']].rename(columns={
+            'playerName':      'Player',
+            'last_active_yr':  'Last Active',
+            'recent_sg_total': 'SG Total (3yr)',
+            'sg_ott':          'SG OTT',
+            'sg_app':          'SG App',
+            'sg_atg':          'SG ATG',
+        })
+        _pool_sort = st.selectbox(
+            "Sort by", ['SG Total (3yr)', 'SG OTT', 'SG App', 'SG ATG'],
+            key='pool_sort'
+        )
+        _pool_disp = _pool_disp.sort_values(_pool_sort, ascending=False).reset_index(drop=True)
+        _pool_disp.index = _pool_disp.index + 1
+        st.dataframe(
+            _pool_disp.style
+                .format({c: lambda x: f'{x:.3f}' if pd.notna(x) else '—'
+                         for c in ['SG Total (3yr)', 'SG OTT', 'SG App', 'SG ATG']})
+                .background_gradient(subset=['SG Total (3yr)'], cmap='RdYlGn',
+                                     vmin=0.2, vmax=1.5),
+            use_container_width=True,
+            height=400,
+        )
