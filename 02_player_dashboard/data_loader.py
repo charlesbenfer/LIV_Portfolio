@@ -25,19 +25,20 @@ LIV_SEASON_STATS_CSV = os.path.join(_HERE, 'data', 'liv_season_stats.csv')
 # ── LIV Golf Player Roster ─────────────────────────────────────────────────────
 # Used for PGA Tour last-name matching.  Keep in sync with actual 2025 roster.
 LIV_ROSTER = {
-    "4 Aces GC":        ["Dustin Johnson", "Patrick Reed", "Pat Perez", "Peter Uihlein"],
-    "Crushers GC":      ["Bryson DeChambeau", "Paul Casey", "Charles Howell III", "Anirban Lahiri"],
-    "HyFlyers GC":      ["Phil Mickelson", "Brendan Steele", "James Piot", "Cam Davis"],
-    "Iron Heads GC":    ["Kevin Na", "Scott Vincent", "Sihwan Kim", "Danny Lee"],
-    "Majesticks GC":    ["Henrik Stenson", "Ian Poulter", "Lee Westwood", "Sam Horsfield"],
-    "Niblicks GC":      ["Kevin Streelman", "Richard Bland", "Jediah Morgan", "Travis Smyth"],
-    "Punch GC":         ["Jason Kokrak", "Carlos Ortiz", "Hudson Swafford", "Graeme McDowell"],
-    "Range Goats GC":   ["Bubba Watson", "Talor Gooch", "Harold Varner III", "Thomas Pieters"],
-    "Ripper GC":        ["Cameron Smith", "Marc Leishman", "Matt Jones", "Jediah Morgan"],
-    "Smash GC":         ["Brooks Koepka", "Chase Koepka", "Sergio Garcia", "Abraham Ancer"],
-    "Stinger GC":       ["Louis Oosthuizen", "Charl Schwartzel", "Branden Grace", "Dean Burmester"],
-    "Torque GC":        ["Joaquin Niemann", "Mito Pereira", "Sebastian Munoz", "David Puig"],
-    "Legion XIII":      ["Jon Rahm", "Jon Lobb", "Tyrrell Hatton", "Calum Hill"],
+    "4Aces GC":             ["Dustin Johnson", "Thomas Detry", "Anthony Kim", "Thomas Pieters"],
+    "Cleeks Golf Club":     ["Martin Kaymer", "Richard Bland", "Adrian Meronk", "Victor Perez"],
+    "Crushers GC":          ["Bryson DeChambeau", "Paul Casey", "Charles Howell III", "Anirban Lahiri"],
+    "Fireballs GC":         ["Sergio Garcia", "Josele Ballester", "Luis Masaveu", "David Puig"],
+    "HyFlyers GC":          ["Phil Mickelson", "Michael LaSasso", "Brendan Steele", "Cameron Tringale"],
+    "Korean Golf Club":     ["Byeong Hun An", "Minkyu Kim", "Danny Lee", "Younghan Song"],
+    "Legion XIII":          ["Jon Rahm", "Tyrrell Hatton", "Tom McKibbin", "Caleb Surratt"],
+    "Majesticks Golf Club": ["Ian Poulter", "Lee Westwood", "Laurie Canter", "Sam Horsfield"],
+    "RangeGoats GC":        ["Bubba Watson", "Ben Campbell", "Peter Uihlein", "Matthew Wolff"],
+    "Ripper GC":            ["Cameron Smith", "Lucas Herbert", "Marc Leishman", "Elvis Smylie"],
+    "Smash GC":             ["Talor Gooch", "Jason Kokrak", "Graeme McDowell", "Harold Varner III"],
+    "Southern Guards GC":   ["Louis Oosthuizen", "Dean Burmester", "Branden Grace", "Charl Schwartzel"],
+    "Torque GC":            ["Joaquin Niemann", "Abraham Ancer", "Sebastian Munoz", "Carlos Ortiz"],
+    "Wild Card":            ["Yosuke Asaji", "Bjorn Hellgren", "Richard T. Lee", "Miguel Tabuena"],
 }
 
 ALL_LIV_PLAYERS = sorted(set(
@@ -52,7 +53,9 @@ PLAYER_TEAM = {
 
 # Scraped playerName variants that don't match the canonical roster name above
 NAME_OVERRIDES = {
-    'Jed Morgan': 'Jediah Morgan',
+    'Young-han Song': 'Younghan Song',
+    'Sebastian Muñoz': 'Sebastian Munoz',
+    'Byeong-Hun An':   'Byeong Hun An',
 }
 
 # SG categories tracked
