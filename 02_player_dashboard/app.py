@@ -1433,7 +1433,7 @@ elif page == "ROI & Acquisition":
                 line=dict(width=1, color='rgba(255,255,255,0.3)'),
                 opacity=0.9,
             ),
-            customdata=_grp[['playerName', 'team', 'peak_sg_total', 'major_top10',
+            customdata=_grp[['playerName', 'team', 'peak_sg_for_prestige', 'major_top10',
                               'events_played', 'avg_position', 'wins']].values,
             hovertemplate=(
                 '<b>%{customdata[0]}</b> — %{customdata[1]}<br>'
