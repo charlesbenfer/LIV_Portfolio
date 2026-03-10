@@ -1014,9 +1014,10 @@ def main():
                         help='Multiple event slugs for per-event stats')
     args = parser.parse_args()
 
-    do_season_stats  = not args.leaderboards_only and not args.event_stats_only
-    do_leaderboards  = not args.stats_only and not args.event_stats_only
-    do_event_stats   = args.event_stats_only or bool(args.event or args.events)
+    targeting_specific_event = bool(args.event or args.events)
+    do_season_stats  = not args.leaderboards_only and not args.event_stats_only and not targeting_specific_event
+    do_leaderboards  = not args.stats_only and not args.event_stats_only and not targeting_specific_event
+    do_event_stats   = args.event_stats_only or targeting_specific_event
 
     lb_seasons = [args.season] if args.season else (args.seasons or None)
     ev_slugs   = ([args.event] if args.event else None) or args.events or None
