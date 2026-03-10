@@ -289,8 +289,14 @@ def load_liv_combined_events() -> pd.DataFrame:
     return merged
 
 
+_NAME_SUFFIXES = {'iii', 'ii', 'iv', 'jr', 'jr.', 'sr', 'sr.'}
+
 def _last_name(full_name: str) -> str:
-    return full_name.split()[-1].lower()
+    parts = full_name.split()
+    # Skip trailing generational suffixes (III, Jr., etc.)
+    while len(parts) > 1 and parts[-1].lower().rstrip('.') in _NAME_SUFFIXES:
+        parts = parts[:-1]
+    return parts[-1].lower()
 
 
 # ── Timeseries builder ─────────────────────────────────────────────────────────

@@ -47,6 +47,14 @@ _KNOWN_EVENTS_ORDERED: list[str] = [
 ]
 _EVENT_SORT_KEY: dict[str, int] = {slug: i for i, slug in enumerate(_KNOWN_EVENTS_ORDERED)}
 
+_NAME_SUFFIXES = {'iii', 'ii', 'iv', 'jr', 'jr.', 'sr', 'sr.'}
+
+def _last_name(full_name: str) -> str:
+    parts = full_name.split()
+    while len(parts) > 1 and parts[-1].lower().rstrip('.') in _NAME_SUFFIXES:
+        parts = parts[:-1]
+    return parts[-1]
+
 # ── Page config ────────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="LIV Golf Analytics",
@@ -449,7 +457,7 @@ elif page == "Player Profile":
 
     # ── LIV Golf Results ───────────────────────────────────────────────────────
     if not liv_results_df.empty:
-        lname_lower = selected.split()[-1].lower()
+        lname_lower = _last_name(selected).lower()
         # Exact match first (canonicalized names); fall back to last-name for edge cases
         player_liv = liv_results_df[liv_results_df['playerName'] == selected].copy()
         if player_liv.empty:
@@ -1352,7 +1360,7 @@ elif page == "ROI & Acquisition":
             y=grp['results_pct'],
             mode='markers+text',
             name=team_name,
-            text=grp['playerName'].apply(lambda n: n.split()[-1]),
+            text=grp['playerName'].apply(_last_name),
             textposition='top center',
             textfont=dict(size=10, color='rgba(255,255,255,0.7)'),
             marker=dict(
@@ -1447,7 +1455,7 @@ elif page == "ROI & Acquisition":
             y=_grp['value_score'],
             mode='markers+text',
             name=_team,
-            text=_grp['playerName'].apply(lambda n: n.split()[-1]),
+            text=_grp['playerName'].apply(_last_name),
             textposition='top center',
             textfont=dict(size=10, color='rgba(255,255,255,0.75)'),
             marker=dict(
