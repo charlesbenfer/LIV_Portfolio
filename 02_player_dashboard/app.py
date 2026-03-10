@@ -26,6 +26,27 @@ from data_loader import (
     calc_prize_money,
 )
 
+# Chronological event order (matches KNOWN_EVENTS in liv_scraper.py).
+# Used to sort events within a season correctly on charts/tables.
+_KNOWN_EVENTS_ORDERED: list[str] = [
+    'london-2022', 'portland-2022', 'bedminster-2022', 'boston-2022',
+    'chicago-2022', 'bangkok-2022', 'jeddah-2022',
+    'mayakoba-2023', 'tucson-2023', 'orlando-2023', 'adelaide-2023',
+    'singapore-2023', 'tulsa-2023', 'dc-2023', 'valderrama-2023',
+    'london-2023', 'greenbrier-2023', 'bedminster-2023', 'chicago-2023',
+    'jeddah-2023',
+    'mayakoba-2024', 'las-vegas-2024', 'riyadh-2024', 'hong-kong-2024',
+    'miami-2024', 'adelaide-2024', 'singapore-2024', 'houston-2024',
+    'nashville-2024', 'greenbrier-2024', 'andalucia-2024', 'uk-2024',
+    'chicago-2024',
+    'riyadh-2025', 'adelaide-2025', 'hong-kong-2025', 'singapore-2025',
+    'miami-2025', 'mexico-city-2025', 'korea-2025', 'va-2025',
+    'dallas-2025', 'andalucia-2025', 'uk-2025', 'chicago-2025',
+    'indianapolis-2025', 'team-championship-michigan-2025',
+    'riyadh-2026', 'adelaide-2026', 'hong-kong-2026',
+]
+_EVENT_SORT_KEY: dict[str, int] = {slug: i for i, slug in enumerate(_KNOWN_EVENTS_ORDERED)}
+
 # ── Page config ────────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="LIV Golf Analytics",
@@ -512,9 +533,13 @@ elif page == "Player Profile":
                 base_cols = [c for c in ['year', 'event_name', 'position', 'total_to_par', 'R1', 'R2', 'R3']
                              if c in player_combined.columns]
                 avail_stat_cols = [c for c in stat_cols if c in player_combined.columns]
-                log_df = (player_combined[base_cols + avail_stat_cols]
-                          .sort_values(['year', 'event_name'])
-                          .reset_index(drop=True))
+                _tmp = player_combined[base_cols + avail_stat_cols].copy()
+                if 'event_slug' in player_combined.columns:
+                    _tmp['_sort'] = player_combined['event_slug'].map(_EVENT_SORT_KEY).fillna(999)
+                    _tmp = _tmp.sort_values('_sort').drop(columns='_sort')
+                else:
+                    _tmp = _tmp.sort_values(['year', 'event_name'])
+                log_df = _tmp.reset_index(drop=True)
                 numeric_stat_cols = [c for c in avail_stat_cols if log_df[c].notna().any()]
                 styled = log_df.style
                 if numeric_stat_cols:
@@ -533,8 +558,9 @@ elif page == "Player Profile":
                     st.markdown("---")
                     st.subheader("LIV Performance Stats — Event Trends")
 
-                    # Sort by season then event_slug for a chronological x-axis
-                    player_ev = player_ev.sort_values(['year', 'event_slug']).reset_index(drop=True)
+                    # Sort chronologically using canonical event order
+                    player_ev['_sort'] = player_ev['event_slug'].map(_EVENT_SORT_KEY).fillna(999)
+                    player_ev = player_ev.sort_values('_sort').drop(columns='_sort').reset_index(drop=True)
                     # Strip the 4-digit year from event_name (e.g. "Adelaide 2023" → "Adelaide")
                     # then append a 2-digit year suffix → "Adelaide '23"
                     # This keeps labels short and unique across seasons.
