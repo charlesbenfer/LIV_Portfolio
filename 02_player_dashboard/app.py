@@ -108,7 +108,7 @@ with st.sidebar:
     )
     st.markdown("---")
     st.markdown("**PGA data**: SG stats (2015–2025)")
-    st.markdown("**LIV data**: Event results & estimated SG (2022–2025)")
+    st.markdown("**LIV data**: Event results & estimated SG (2022–Hong Kong 2026)")
     st.markdown("**Players**: All current LIV Golf roster members")
     st.markdown("**Source**: ESPN API + PGA Tour GraphQL + livgolf.com")
 
