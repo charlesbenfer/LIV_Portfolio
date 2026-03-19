@@ -1,6 +1,6 @@
 # PGA Tour Performance Prediction Engine
 
-> Full project source: [`../../PGA_Prediction_Tools/`](../../PGA_Prediction_Tools/)
+> Full project writeup: [`https://charlesbenfer.github.io/2026-03-02-pga-tour-prediction-system/](https://charlesbenfer.github.io/2026-03-02-pga-tour-prediction-system/)
 
 ---
 
