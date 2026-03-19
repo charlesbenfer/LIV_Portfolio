@@ -95,7 +95,7 @@ This auto-detects the next PGA Tour event from the ESPN schedule and outputs ran
 
 ## LIV Relevance
 
-Every major LIV player has a full PGA Tour career in this dataset:
+Almost every major LIV player has a full PGA Tour career in this dataset:
 
 | LIV Player | PGA Tour Events in Dataset |
 |---|---|
